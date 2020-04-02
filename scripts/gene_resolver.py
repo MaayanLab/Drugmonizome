@@ -13,12 +13,12 @@ def gene_resolver(geneObject, columnName = 'Gene Name', fmt = 'DataFrame'):
     '''
 
     # Importing approved symbol table
-    df_lookup = pd.read_csv('/Users/maayanlab/Documents/DrugSetEnrichment/mapping_files/Homo_sapiens.gene_info',
+    df_lookup = pd.read_csv('/Users/maayanlab/Drugmonizome/metadata/Homo_sapiens.gene_info',
      delimiter = '\t')
     approved_symbols = df_lookup['Symbol'].tolist()
 
     # Gene synonym lookup
-    with open('/Users/maayanlab/Documents/DrugSetEnrichment/mapping_files/gene_symbol_lookup.json', 'r') as f:
+    with open('/Users/maayanlab/Drugmonizome/metadata/gene_symbol_lookup.json', 'r') as f:
         synonym_lookup = json.load(f)
 
     if fmt == 'DataFrame':
@@ -34,10 +34,10 @@ def gene_resolver(geneObject, columnName = 'Gene Name', fmt = 'DataFrame'):
         geneObject.loc[:,'Approved Symbol'] = pd.Series(np.array(term_list), index = geneObject.index)
 
     if fmt == 'list':
-        df = pd.DataFrame(data = geneObject, columns = ['Gene Name'])
+        df = pd.DataFrame(data = geneObject, columns = ['Gene_name'])
         term_list = []
         for index, row in df.iterrows():
-            gene = row.loc['Gene Name']
+            gene = row.loc['Gene_name']
             if gene in approved_symbols:
                 term_list.append(gene)
             elif gene in synonym_lookup:
@@ -45,7 +45,6 @@ def gene_resolver(geneObject, columnName = 'Gene Name', fmt = 'DataFrame'):
             else:
                 df.drop(index, inplace = True)
         df.loc[:,'Approved Symbol'] = pd.Series(np.array(term_list), index = df.index)
-        genes = df['Approved Symbol'].tolist()
-        return genes
+        return df
 
 
