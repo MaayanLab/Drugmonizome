@@ -1,0 +1,62 @@
+{
+    "meta": {
+        "$validator": "/dcic/signature-commons-schema/v5/meta/schema/ui-schema.json",
+        "match": {
+            "${$validator}": "/@?dcic/signature-commons-schema/(v[0-9]+/)?core/library.json",
+            "${dataset_type}": "geneset_library"
+        },
+        "properties": {
+            "Image": {
+                "visibility": 1,
+                "type": "img",
+                "src": "${meta['Icon']}",
+                "alt": "${meta['Primary_Resource']}",
+                "priority": 1,
+                "icon": true
+            },
+            "Library": {
+                "visibility": 1,
+                "type": "text",
+                "text": "${meta['Library_name']}",
+                "priority": 1,
+                "hyperlink":"${meta['Link_to_resource']}",
+                "name": true
+            },
+            "Description": {
+                "visibility": 1,
+                "type": "text",
+                "text": "${meta['Description']}",
+                "priority": 2,
+                "description": true,
+                "subtitle": true
+            },
+            "Association Type": {
+                "visibility": 1,
+                "type": "text",
+                "text": "${meta['Association_Type']}",
+                "priority": 3,
+                "name": true,
+                "subtitle": true
+            },
+            "Organism": {
+                "visibility": 0,
+                "condition": {
+                    "${meta.Organism}": {
+                        "ne": null
+                    }
+                },
+                "type": "text",
+                "text": "${meta.Organism}",
+                "priority": 4,
+                "MDI_Icon": "mdi-human-child"
+            },
+            "Year": {
+                "visibility": 0,
+                "type": "text",
+                "text": "${meta.Year}",
+                "priority": 4,
+                "MDI_Icon": "mdi-calendar"
+            }
+        }
+    }
+}

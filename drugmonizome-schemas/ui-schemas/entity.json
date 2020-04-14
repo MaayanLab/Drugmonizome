@@ -1,0 +1,51 @@
+{
+    "meta":{
+        "type": "entity",
+        "$validator": "/dcic/signature-commons-schema/v5/meta/schema/ui-schema.json",
+        "match": {
+            "${$validator}": "/@?dcic/signature-commons-schema/(v[0-9]+/)?core/entity.json"
+        },
+        "properties": {
+            "Name": {
+            "visibility": 1,
+            "type": "text",
+            "text": "${meta.Name}",
+            "name": true,
+            "field": "meta.Name",
+            "priority": 1
+            },
+            "Accession": {
+            "visibility": 1,
+            "type": "text",
+            "text": "${meta.Accession}",
+            "field": "meta.Accession",
+            "priority": 2,
+            "name": true
+            },
+            "Synonyms": {
+            "visibility": 0,
+            "type": "text",
+            "text": "${meta.Synonyms}",
+            "field": "meta.Synonyms",
+            "synonyms": true,
+            "priority": 3
+            },
+            "InChI_key": {
+            "visibility": 1,
+            "type": "text",
+            "text": "${meta.InChI_key}",
+            "field": "meta.InChI_key",
+            "name": true,
+            "priority": 2
+            },
+            "SMILES":{
+            "visibility":1,
+            "type": "text",
+            "text": "${meta.SMILES}",
+            "field": "meta.SMILES",
+            "name": true,
+            "priority": 3
+            }
+        }
+    }
+}

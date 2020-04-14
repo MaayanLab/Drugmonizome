@@ -1,0 +1,42 @@
+{
+  "$id": "/dcic/signature-commons-schema/v5/meta/entity/sigcom.json",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "allOf": [
+    {
+      "$ref": "/dcic/signature-commons-schema/v5/core/meta.json"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "Name": {
+          "type": "string",
+          "description": "Preferred small molecule name"
+        },
+        "Accession": {
+          "type": "string",
+          "description": "Unique identifier from DrugBank or LINCS"
+        },
+        "SMILES": {
+          "type": "string",
+          "description": "Unique canonical SMILES string for each entity"
+        },
+        "InChI_key": {
+          "type": "string",
+          "description": "Unique textual identifier string for each entity"
+        },
+        "Synonyms": {
+          "type": "array",
+          "description": "Aliases for this specific entity",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "Name",
+        "Accession",
+        "InChIKey"
+      ]
+    }
+  ]
+}

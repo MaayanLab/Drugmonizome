@@ -1,0 +1,359 @@
+{
+  "$id": "/dcic/signature-commons-schema/v5/meta/signature/sigcom.json",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "allOf": [
+    {
+      "$ref": "/dcic/signature-commons-schema/v5/core/meta.json"
+    },
+    {
+      "properties": {
+        "Age": {
+          "description": "Age/ age group of the subjects",
+          "type": "string"
+        },
+        "ArrayExpress_Accession": {
+          "description": "ArrayExpress Accession code",
+          "type": "string"
+        },
+        "Assay": {
+          "description": "The assay (TODO: validate against official list)",
+          "type": "string"
+        },
+        "Authors": {
+          "description": "The authors involved with the signature.",
+          "type": "string"
+        },
+        "Batch": {
+          "description": "The batch",
+          "type": "string"
+        },
+        "Brain_Region": {
+          "description": "Region of the brain where the samples were harvested",
+          "type": "string"
+        },
+        "Category_Code": {
+          "description": "Category code of the gene set.",
+          "type": "string"
+        },
+        "Cell_Line": {
+          "description": "The cell line context",
+          "items": {
+            "properties": {
+              "Accession": {
+                "description": "Ontology accession",
+                "type": "string"
+              },
+              "Name": {
+                "description": "Official name of cell line",
+                "type": "string"
+              }
+            },
+            "required": [
+              "Name"
+            ],
+            "type": "object"
+          },
+          "type": "array"
+        },
+        "Cellular_Compartment": {
+          "description": "Subcellular localization information",
+          "type": "string"
+        },
+        "Chip": {
+          "description": "Source platform",
+          "type": "string"
+        },
+        "Chromosome_Location": {
+          "description": "Location in the chromosome",
+          "type": "string"
+        },
+        "Complex": {
+          "description": "Protein complexes",
+          "type": "string"
+        },
+        "Complex_ID": {
+          "description": "Complex Identifier",
+          "type": "string"
+        },
+        "Contributor": {
+          "description": "Names of the contributors",
+          "type": "string"
+        },
+        "Contributor_Org": {
+          "description": "Contributing organization",
+          "type": "string"
+        },
+        "Description": {
+          "description": "Description of the signature",
+          "type": "string"
+        },
+        "Direction": {
+          "description": "Tells whether the data are up regulated or down regulated",
+          "enum": [
+            "up",
+            "down"
+          ],
+          "type": "string"
+        },
+        "Disease": {
+          "$ref": "/dcic/signature-commons-schema/v5/meta/signature/perturbation/disease.json",
+          "description": "Disease perturbations"
+        },
+        "Exact_Source": {
+          "description": "Source of the Gene set",
+          "type": "string"
+        },
+        "Experimental_Group": {
+          "description": "The group being measured",
+          "type": "string"
+        },
+        "External_Details_Url": {
+          "description": "External link for more details",
+          "format": "uri",
+          "type": "string"
+        },
+        "geo_dataset": {
+          "description": "GEO_Dataset_Accession code",
+          "type": "string"
+        },
+        "platform": {
+          "description": "GEO_Platform_Accession code",
+          "type": "string"
+        },
+        "geo_id": {
+          "description": "GEO_Series_Accession code",
+          "type": "string"
+        },
+        "Gene": {
+          "$ref": "/dcic/signature-commons-schema/v5/meta/signature/perturbation/gene.json",
+          "description": "Gene involved"
+        },
+        "Gene_Family": {
+          "description": "The family of genes (TODO: validate against official list)",
+          "type": "string"
+        },
+        "Gene_Set": {
+          "description": "Name of the gene set",
+          "type": "string"
+        },
+        "Genome_Build": {
+          "description": "Genome assembly build",
+          "type": "string"
+        },
+        "GO": {
+          "description": "Gene ontology annotations",
+          "properties": {
+            "Biological_Process": {
+              "description": "GO Biological Process.",
+              "type": "string"
+            },
+            "Cellular_Component": {
+              "description": "GO Cellular Component",
+              "type": "string"
+            },
+            "Accession": {
+              "description": "Gene ontology ID",
+              "pattern": "GO:[0-9]+",
+              "type": "string"
+            },
+            "Molecular_Function": {
+              "description": "GO molecular funtion",
+              "type": "string"
+            }
+          },
+          "type": "object",
+          "required": [
+            "Accession"
+          ]
+        },
+        "Grant_Number": {
+          "description": "Grant_Number code",
+          "type": "string"
+        },
+        "Library": {
+          "description": "Enrichr Library",
+          "type": "string"
+        },
+        "Metabolite": {
+          "description": "The metabolite.",
+          "properties": {
+            "HMDID": {
+              "description": "HMDB ID",
+              "pattern": "HMDB[0-9]+",
+              "type": "string"
+            },
+            "Name": {
+              "description": "Name of the metabolite",
+              "type": "string"
+            }
+          },
+          "required": [
+            "Name"
+          ],
+          "type": "object"
+        },
+        "MicroRNA": {
+          "description": "The microRNA",
+          "type": "string"
+        },
+        "Mouse_Model": {
+          "description": "Mouse model",
+          "type": "string"
+        },
+        "MGS_ID": {
+          "description": "MGS_ID code",
+          "type": "string"
+        },
+        "NCI_PID_UUID": {
+          "description": "NCI_PID_UUID code",
+          "type": "string"
+        },
+        "Number_of_drugs": {
+          "description": "Number of drugs in the set",
+          "type": "number"
+        },
+        "Organism": {
+          "description": "The organism (TODO: validate against official list)",
+          "type": "string"
+        },
+        "Original_String": {
+          "description": "The original string recognized during processing",
+          "type": "string"
+        },
+        "Other": {
+          "$ref": "/dcic/signature-commons-schema/v5/meta/signature/perturbation/other.json",
+          "description": "Other perturbations"
+        },
+        "PMID": {
+          "description": "PubMed ID",
+          "pattern": "[0-9]+",
+          "type": "string"
+        },
+        "PTM": {
+          "description": "Post translational modification",
+          "type": "string"
+        },
+        "PWM": {
+          "description": "Position Weight Matrices (PWMs)",
+          "type": "string"
+        },
+        "Pathway": {
+          "description": "The signature's pathway",
+          "properties": {
+            "Accession": {
+              "description": "External accession of the pathway (Wiki Pathway ID/Pathway ID/KEGG ID)",
+              "type": "string"
+            },
+            "Name": {
+              "description": "Name/ description of the pathway",
+              "type": "string"
+            }
+          },
+          "required": [
+            "Name"
+          ],
+          "type": "object"
+        },
+        "Patient_ID": {
+          "description": "Patient Identifier",
+          "type": "string"
+        },
+        "Perturbation_ID": {
+          "description": "The type of perturbation performed the study.",
+          "type": "string"
+        },
+        "Association_Type": {
+          "description": "The type of association gathered from resource.",
+          "type": "string"
+        },
+        "Phenotype": {
+          "$ref": "/dcic/signature-commons-schema/v5/meta/signature/perturbation/phenotype.json",
+          "description": "Phenotype perturbations"
+        },
+        "Program": {
+          "description": "The program/project involved witht the signature",
+          "type": "string"
+        },
+        "Protein_Domain": {
+          "description": "Structural protein domain.",
+          "type": "string"
+        },
+        "Readout": {
+          "description": "The readout",
+          "type": "string"
+        },
+        "Sex": {
+          "description": "the sex of the sample",
+          "enum": [
+            "female",
+            "male",
+            "male v female",
+            "mixed sex"
+          ],
+          "type": "string"
+        },
+        "Small_Molecule": {
+          "$ref": "/dcic/signature-commons-schema/v5/meta/signature/perturbation/small-molecule.json",
+          "description": "Small Molecule used in the study"
+        },
+        "Sub_Category_Code": {
+          "description": "Sub-collection the signature belongs to",
+          "enum": [
+            "CGN",
+            "CM"
+          ],
+          "type": "string"
+        },
+        "Systematic_Name": {
+          "description": "Alternative identifier",
+          "type": "string"
+        },
+        "Table_Number": {
+          "description": "Figure/Table number from the published literature where the signature was extracted",
+          "type": "string"
+        },
+        "Taxon": {
+          "description": "The taxon involved in the study",
+          "type": "string"
+        },
+        "Time_Point": {
+          "description": "Time points used in the study.",
+          "type": "string"
+        },
+        "Term": {
+          "description": "The associated term",
+          "items": {
+            "properties": {
+              "Accession": {
+                "description": "Ontology accession",
+                "type": "string"
+              },
+              "Name": {
+                "description": "Name of the term",
+                "type": "string"
+              }
+            },
+            "required": [
+              "Name"
+            ],
+            "type": "object"
+          },
+          "type": "array"
+        },
+        "Virus": {
+          "$ref": "/dcic/signature-commons-schema/v5/meta/signature/perturbation/disease.json",
+          "description": "Virus perturbations TODO: Merge with disease perturbations"
+        }
+      },
+      "required": [
+        "Number_of_drugs",
+        "Filename",
+        "Term",
+        "$validator",
+        "Association_Type",
+        "Organism"
+      ],
+      "type": "object"
+    }
+  ]
+}

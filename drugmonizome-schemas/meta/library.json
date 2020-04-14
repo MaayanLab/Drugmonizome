@@ -1,0 +1,116 @@
+{
+  "$id": "/dcic/signature-commons-schema/v5/meta/library/sigcom.json",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "allOf": [
+    {
+      "$ref": "/dcic/signature-commons-schema/v5/core/meta.json"
+    },
+    {
+      "properties": {
+        "Access_URL": {
+          "description": "The url that this library can be acccessed from.",
+          "format": "uri",
+          "type": "string"
+        },
+        "DOI": {
+          "description": "The DOI for this publication",
+          "type": "string"
+        },
+        "Description": {
+          "description": "Description of the library",
+          "type": "string"
+        },
+        "Direction": {
+          "description": "Tells whether the data are up regulated or down regulated",
+          "enum": [
+            "up",
+            "down"
+          ],
+          "type": "string"
+        },
+        "Filename": {
+          "description": "Filename of the library",
+          "type": "string"
+        },
+        "Gene_Family": {
+          "description": "The gene family of the signatures",
+          "type": "string",
+          "enum": [
+            "Kinases",
+            "Transcription factors",
+            "phosphatase"
+          ]
+        },
+        "Icon": {
+          "description": "Path to the favicon",
+          "type": "string"
+        },
+        "Library_Name": {
+          "description": "The name of the library",
+          "type": "string"
+        },
+        "Library_created_by": {
+          "description": "Creator of the library",
+          "type": "string"
+        },
+        "Link_to_processing_scripts_on_GitHub": {
+          "description": "Link to the script used to process the library",
+          "type": "string"
+        },
+        "Link_to_resource": {
+          "description": "Links to library resource",
+          "format": "uri",
+          "type": "string"
+        },
+        "Organism": {
+          "description": "Scientific name of the source organism of the library",
+          "type": "string"
+        },
+        "Original Source": {
+          "description": "Original source of the library",
+          "type": "string"
+        },
+        "PMID": {
+          "description": "The PubMed ID for this publication",
+          "pattern": "^([0-9]+(; *)?)+$",
+          "type": "string"
+        },
+        "Association_Type": {
+          "description": "The type of association",
+          "type": "string"
+        },
+        "Primary_Resource": {
+          "description": "Primary resource used",
+          "type": "string"
+        },
+        "Spec": {
+          "description": "Regex used to mine the metadata from the gmt file",
+          "type": "string"
+        },
+        "Version": {
+          "description": "The version of this library (TODO: more formal version format)",
+          "type": "string"
+        },
+        "Year": {
+          "description": "Year the library was created",
+          "pattern": "[0-9]{4}",
+          "type": "string"
+        }
+      },
+      "required": [
+        "$validator",
+        "Description",
+        "Icon",
+        "Library_created_by",
+        "Library_name",
+        "Link_to_resource",
+        "Organism",
+        "Original_source",
+        "Association_Type",
+        "Primary_Resource",
+        "Version"
+      ],
+      "type": "object"
+    }
+  ]
+}
