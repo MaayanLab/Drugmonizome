@@ -1,5 +1,5 @@
 # DrugSetLibraries
-These are the notebooks and Notebooks used to generate drugset libraries. The input files are of varying size and need to be downloaded from the web. Links to each resource are found in each notebook whenever loading in an input file.
+These are the notebooks used to generate drugset libraries. The input files are of varying size and need to be downloaded from the web. Links to each resource are found in each notebook whenever loading in an input file.
 
 Number of resources : 12
 
