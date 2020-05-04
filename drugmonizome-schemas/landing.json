@@ -25,11 +25,22 @@
         "text_3": "By",
         "text_4": "Start using Signature Commons in your project",
         "metadata_placeholder": "Search drug-set metadata",
-        "geneset_placeholder": "Small molecules that contribute to signature or overlap with drug-set",
-        "up_genes_placeholder": "Small molecules up-regulated in signature or overlap with gene set",
-        "down_genes_placeholder": "Genes that are down-regulated in signature or overlap with gene set",
-        "resource_pie_caption": "Drug-sets per Resource",
-        "search_terms": ["Headache", "Dry mouth", "TNF", "PKN3"],
+        "geneset_placeholder": "Small molecules that overlap with drug set",
+        "resource_pie_caption": "Drug sets per Resource",
+        "search_terms": ["Headache", "Dry mouth", "XIST", "PKN3"],
+        "example_geneset_chip": "Example Crisp Drug Set",
+        "overlap_search": true,
+        "rank_search": false,
+        "examples": [
+          {
+            "label": "Example Drug Set",
+            "input": {
+              "type": "Overlap",
+              "geneset": "mefloquine\nhydroxychloroquine\nchloroquine\nremdesivir\nproscillaridin\nniclosamide\nhexachlorophene\nlopinavir\namodiaquine\nbazedoxifene\nanidulafungin\ncyclosporine\nloperamide\nivacaftor\nabemaciclib\nalmitrine\ncamostat\ntilorone"
+            }
+          }
+        ],
+        "entity_strategy": "lower",
         "nav": {
         "MetadataSearch": {
             "active": true,
@@ -49,14 +60,14 @@
         }
         },
         "preferred_name_singular": {
-        "libraries": "Drug-set library",
-        "signatures": "Drug-set",
+        "libraries": "Drug set library",
+        "signatures": "Drug set",
         "entities": "Small molecule",
         "resources": "Resource"
         },
         "preferred_name": {
-        "libraries": "Drug-set libraries",
-        "signatures": "Drug-sets",
+        "libraries": "Drug set libraries",
+        "signatures": "Drug sets",
         "entities": "Small molecules",
         "resources": "Resources"
         },

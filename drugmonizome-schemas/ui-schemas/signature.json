@@ -1,9 +1,10 @@
 {
-    "meta": {
-        "$validator": "/dcic/signature-commons-schema/v5/meta/schema/ui-schema.json",
-        "match": {
-            "${$validator}": "/@?dcic/signature-commons-schema/(v[0-9]+/)?core/signature.json"
-        },
+	"$validator": "/dcic/signature-commons-schema/v5/core/schema.json",
+	"meta": {
+		"match": {
+			"${$validator}": "/@?dcic/signature-commons-schema/(v[0-9]+/)?core/signature.json"
+		},
+		"$validator": "/dcic/signature-commons-schema/v5/meta/schema/ui-schema.json",
         "properties": {
             "Image": {
                 "visibility": 1,
@@ -20,19 +21,19 @@
                 "priority": 1,
                 "subtitle": true
             },
-            "Association Type": {
-                "visibility": 1,
-                "type": "text",
-                "text": "${meta['Association_Type']}",
-                "name": true,
-                "priority": 2
-            },
             "Association Term": {
                 "visibility": 1,
                 "type": "text",
-                "text": "${meta.Term[0].Name}",
+                "text": "${meta['Term'][0]['Name']}",
                 "name": true,
                 "priority": 1
+            },
+            "Association Type": {
+                "visibility": 1,
+                "type": "text",
+                "MDI_Icon":"mdi-ray-start-end",
+                "text": "${meta['Association_Type']}",
+                "priority": 2
             },
             "P-Value": {
                 "visibility": 1,

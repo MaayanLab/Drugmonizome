@@ -1,51 +1,42 @@
 {
-    "meta":{
-        "type": "entity",
-        "$validator": "/dcic/signature-commons-schema/v5/meta/schema/ui-schema.json",
-        "match": {
-            "${$validator}": "/@?dcic/signature-commons-schema/(v[0-9]+/)?core/entity.json"
-        },
-        "properties": {
-            "Name": {
-            "visibility": 1,
-            "type": "text",
-            "text": "${meta.Name}",
-            "name": true,
-            "field": "meta.Name",
-            "priority": 1
+    "$validator": "/dcic/signature-commons-schema/v5/core/schema.json",
+        "meta": {
+            "type": "entity",
+            "match": {
+                "${$validator}": "/@?dcic/signature-commons-schema/(v[0-9]+/)?core/entity.json"
             },
-            "Accession": {
-            "visibility": 1,
-            "type": "text",
-            "text": "${meta.Accession}",
-            "field": "meta.Accession",
-            "priority": 2,
-            "name": true
-            },
-            "Synonyms": {
-            "visibility": 0,
-            "type": "text",
-            "text": "${meta.Synonyms}",
-            "field": "meta.Synonyms",
-            "synonyms": true,
-            "priority": 3
-            },
-            "InChI_key": {
-            "visibility": 1,
-            "type": "text",
-            "text": "${meta.InChI_key}",
-            "field": "meta.InChI_key",
-            "name": true,
-            "priority": 2
-            },
-            "SMILES":{
-            "visibility":1,
-            "type": "text",
-            "text": "${meta.SMILES}",
-            "field": "meta.SMILES",
-            "name": true,
-            "priority": 3
+            "$validator": "/dcic/signature-commons-schema/v5/meta/schema/ui-schema.json",
+            "properties": {
+                "Name": {
+                    "name": true,
+                    "text": "${meta.Name}",
+                    "type": "text",
+                    "field": "meta.Name",
+                    "priority": 1,
+                    "visibility": 1
+                },
+                "InChI_key": {
+                    "text": "${meta.InChI_key}",
+                    "type": "text",
+                    "field": "meta.InChI_key",
+                    "priority": 2,
+                    "visibility": 2
+                },
+                "Synonyms": {
+                    "text": "${meta.Synonyms}",
+                    "type": "text",
+                    "field": "meta.Synonyms",
+                    "priority": 3,
+                    "synonyms": true,
+                    "visibility": 1
+                },
+                "SMILES": {
+                    "text": "${meta.SMILES}",
+                    "type": "text",
+                    "field": "meta.SMILES",
+                    "priority": 3,
+                    "visibility": 2
+                }
             }
         }
     }
-}

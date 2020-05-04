@@ -43,6 +43,21 @@
                 "$validator": "/dcic/signature-commons-schema/v5/meta/schema/counting.json"
             }
 
+    },
+    {
+        "$validator":"/dcic/signature-commons-schema/v5/core/schema.json",
+        "meta":
+        {
+            "Field_Name": "meta.Association_Type",
+            "Type": "object",
+            "Preferred_Name": "Association Type",
+            "MDI_Icon": "mdi-flask",
+            "Table": "signatures",
+            "Pie_Count": true,
+            "$validator": "/dcic/signature-commons-schema/v5/meta/schema/counting.json"
+
+        }
+
     }
 
 ]
