@@ -350,8 +350,7 @@
         "Filename",
         "Term",
         "$validator",
-        "Association_Type",
-        "Organism"
+        "Association_Type"
       ],
       "type": "object"
     }
