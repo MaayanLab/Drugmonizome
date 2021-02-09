@@ -1,96 +1,76 @@
 {
+    "$validator": "/dcic/signature-commons-schema/v5/core/schema.json",
     "id": "2d7449cd-08bd-4da2-8627-a906987cdb86",
     "meta": {
-        "$validator": "/dcic/signature-commons-schema/v5/meta/schema/landing-ui.json",
-        "landing": true,
         "content": {
-            "library_name": "",
-            "font_families": [
-                "https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
-            ],
-            "favicon": {
-                "src": "https://raw.githubusercontent.com/MaayanLab/Drugmonizome/master/drugmonizome-schemas/images/logo.ico",
-                "alt": "Drugmonizome",
-                "title": "Drugmonizome"
-            },
-            "header_info": {
-                "header_left": "",
-                "header_right": "Drugmonizome",
-                "icon": {
-                    "src": "https://raw.githubusercontent.com/MaayanLab/Drugmonizome/master/drugmonizome-schemas/images/logo.ico",
-                    "alt": "Drugmonizome",
-                    "style": {
-                        "width": 50
-                    }
-                }
-            },
-            "text_1": "Explore an extensive collection of well-annotated drug-set libraries",
-            "text_2": "Search across a broad gathering of association terms",
-            "text_3": "By",
-            "text_4": "Start using Signature Commons in your project",
-            "metadata_placeholder": "Search drug-set metadata",
-            "geneset_placeholder": "Small molecules that overlap with drug set",
-            "resource_pie_caption": "Drug sets per Resource",
-            "search_terms": [
-                "Headache",
-                "Dry mouth",
-                "XIST",
-                "PKN3"
-            ],
-            "example_geneset_chip": "Example Crisp Drug Set",
-            "overlap_search": true,
-            "rank_search": false,
-            "examples": [
-                {
-                    "label": "Example Drug Set",
-                    "input": {
-                        "type": "Overlap",
-                        "geneset": "mefloquine\nhydroxychloroquine\nchloroquine\nremdesivir\nproscillaridin\nniclosamide\nhexachlorophene\nlopinavir\namodiaquine\nbazedoxifene\nanidulafungin\ncyclosporine\nloperamide\nivacaftor\nabemaciclib\nalmitrine\ncamostat"
-                    }
-                }
-            ],
-            "entity_strategy": "lower",
             "nav": {
+                "API": {
+                    "active": true,
+                    "endpoint": "/API"
+                },
+                "Resources": {
+                    "active": true,
+                    "endpoint": "/Resources"
+                },
                 "MetadataSearch": {
                     "active": true,
                     "endpoint": "/MetadataSearch"
                 },
                 "SignatureSearch": {
                     "active": true,
-                    "endpoint": "/SignatureSearch"
-                },
-                "Resources": {
-                    "active": true,
-                    "endpoint": "/Resources"
-                },
-                "API": {
-                    "active": true,
-                    "endpoint": "/API"
+                    "navName": "Drug Set Enrichment",
+                    "endpoint": "/DrugSetEnrichment"
                 }
             },
-            "preferred_name_singular": {
-                "libraries": "Drug set library",
-                "signatures": "Drug set",
-                "entities": "Small molecule",
-                "resources": "Resource"
+            "github": "https://github.com/dcic/signature-commons-ui",
+            "text_1": "Explore an extensive collection of well-annotated drug set libraries",
+            "text_2": "Search across a broad gathering of association terms",
+            "text_3": "By",
+            "text_4": "Start using Signature Commons in your project",
+            "favicon": {
+                "alt": "Drugmonizome",
+                "src": "https://raw.githubusercontent.com/MaayanLab/Drugmonizome/master/drugmonizome-schemas/images/logo.ico",
+                "title": "Drugmonizome"
             },
-            "preferred_name": {
-                "libraries": "Drug set libraries",
-                "signatures": "Drug sets",
-                "entities": "Small molecules",
-                "resources": "Resources"
+            "powered": true,
+            "examples": [
+                {
+                    "type": "Overlap",
+                    "label": "Example Drug Set 1",
+                    "entities": "lopinavir\nremdesivir\nmefloquine\nloratadine\nalmitrine\ncamostat\npevonedistat\noctenidine\nnafamostat\npapaverine\napixaban\nalvocidib\nmethylene blue\nemetine\ncycloheximide\namuvatinib\nthimerosal\nhomoharringtonine\nposaconazole\npolidocanol\ndrotaverine\nketoconazole\nalisporivir\nregorafenib\nloteprednol\nlidoflazine\nchlormidazole\ntyrphostin\navasimibe\nbrexpiprazole\nsorafenib\nlonafarnib\ndapivirine\nflunarizine\njte-013\nravuconazole\nmibampator\noxiconazole\nzk-93423\ncetylpyridinium\navatrombopag\nph-797804\netifoxine\ndcpib\ncc-223\nvatalanib\ntioguanine\namg-9810\npexidartinib\ncarboxyamidotriazole"
+                },
+                {
+                    "type": "Overlap",
+                    "label": "Example Drug Set 2",
+                    "entities": "remdesivir\nalmitrine\nparicalcitol\nvincristine\nponatinib\nsirolimus\nhexachlorophene\ncarvedilol\nnitazoxanide\nnilotinib\npacritinib\neverolimus\nclofazimine\nlevobetaxolol\ndoxercalciferol\nnebivolol\ncalcipotriol\nvismodegib\ntemsirolimus\ndexpropranolol\ntrihexyphenidyl\ncloperastine\nceliprolol\nbupranolol\ncloranolol\npenbutolol\ntriclocarban\nhydroxystilbamidine\nacitretin\ncalcifediol\noxybenzone"
+                },
+                {
+                    "type": "Overlap",
+                    "label": "Example Drug Set 3",
+                    "entities": "lopinavir\namodiaquine\nremdesivir\nmefloquine\nchloroquine\nbazedoxifene\nanidulafungin\neltrombopag\ncyclosporine\nloperamide\nproscillaridin\nniclosamide\ndigoxin\nivacaftor\ndigitoxin\nabemaciclib\nhydroxyprogesterone\nciclesonide\nberbamine\ntetrandrine\nouabain\nsalinomycin\ngilteritinib\nhexachlorophene"
+                }
+            ],
+            "downloads": {
+                "gmt": "Download gmt file",
+                "tsv": "Download tsv file",
+                "ranked": "Download ranked signature",
+                "sigcom": true,
+                "enrichr": false,
+                "geneset": "Download drug set",
+                "library_json": "Download library as json",
+                "resource_json": "Download resource as json",
+                "signature_json": "Download signature as json"
             },
-            "footer_links": [],
             "theme_mod": {
                 "palette": {
+                    "default": {
+                        "main": "#555"
+                    },
                     "primary": {
                         "main": "#0063ff"
                     },
                     "secondary": {
                         "main": "rgb(204, 204, 153)"
-                    },
-                    "default": {
-                        "main": "#555"
                     },
                     "defaultCard": {
                         "contrastText": "#FFF"
@@ -106,69 +86,113 @@
                     "fontFamily": "Roboto, Helvetica, Arial, sans-serif"
                 }
             },
-            "powered": true,
-            "github": "https://github.com/dcic/signature-commons-ui",
-            "github_issues": "https://github.com/dcic/signature-commons-ui/issues",
-            "deactivate_download": false,
+            "ui_schema": "/dcic/signature-commons-schema/v5/meta/schema/ui-schema.json",
+            "header_info": {
+                "icon": {
+                    "alt": "Drugmonizome",
+                    "src": "https://raw.githubusercontent.com/MaayanLab/Drugmonizome/master/drugmonizome-schemas/images/logo.ico",
+                    "style": {
+                        "width": 50
+                    }
+                },
+                "header_left": "",
+                "header_right": "Drugmonizome"
+            },
+            "rank_search": false,
+            "footer_links": [],
+            "font_families": [
+                "https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+            ],
+            "github_issues": "https://github.com/MaayanLab/drugmonizome-issues/issues",
+            "overlap_search": true,
+            "preferred_name": {
+                "entities": "Small molecules",
+                "libraries": "Drug set libraries",
+                "resources": "Resources",
+                "signatures": "Drug sets"
+            },
             "bar_chart_style": {
-                "ResponsiveContainer": {
-                    "width": "100%",
-                    "height": 420
+                "Bar": {
+                    "fill": "#0063ff"
                 },
                 "Chart": {
                     "margin": {
-                        "right": 50,
-                        "left": 50,
                         "top": 20,
+                        "left": 50,
+                        "right": 50,
                         "bottom": 20
                     }
                 },
                 "XAxis": {
-                    "axisLine": false,
-                    "angle": 45,
-                    "height": 50,
-                    "textAnchor": "start",
-                    "interval": 0,
                     "tick": {
                         "fontSize": 10
                     },
-                    "tickLine": false
+                    "angle": 45,
+                    "height": 50,
+                    "axisLine": false,
+                    "interval": 0,
+                    "tickLine": false,
+                    "textAnchor": "start"
                 },
-                "Bar": {
-                    "fill": "#0063ff"
-                }
-            },
-            "pie_chart_style": {
                 "ResponsiveContainer": {
                     "width": "100%",
                     "height": 420
+                }
+            },
+            "entity_strategy": "lower",
+            "pie_chart_style": {
+                "Pie": {
+                    "fill": "#0063ff"
                 },
                 "Chart": {
                     "width": 420,
                     "height": 420
                 },
-                "Pie": {
-                    "fill": "#0063ff"
-                },
                 "Text_Label": {
                     "fontSize": 10
+                },
+                "ResponsiveContainer": {
+                    "width": "100%",
+                    "height": 420
                 }
             },
+            "search_examples": {
+                "entities": [
+                    "Imatinib",
+                    "Remdesivir",
+                    "Dexamethasone"
+                ],
+                "libraries": [
+                    "Side effects",
+                    "Pathways"
+                ],
+                "resources": [
+                    "PubChem",
+                    "L1000FWD",
+                    "SIDER"
+                ],
+                "signatures": [
+                    "Headache",
+                    "Dry mouth",
+                    "CXCL10"
+                ]
+            },
             "counting_validator": "/dcic/signature-commons-schema/v5/meta/schema/counting.json",
-            "ui_schema": "/dcic/signature-commons-schema/v5/meta/schema/ui-schema.json",
-            "maxResourcesBeforeCollapse": 60,
             "maxResourcesToShow": 40,
-            "downloads": {
-                "gmt": "Download gmt file",
-                "tsv": "Download tsv file",
-                "geneset": "Download drug set",
-                "ranked": "Download ranked signature",
-                "signature_json": "Download signature as json",
-                "library_json": "Download library as json",
-                "resource_json": "Download resource as json",
-                "sigcom": true,
-                "enrichr": false
-            }
-        }
+            "deactivate_download": false,
+            "geneset_placeholder": "Small molecules that overlap with drug set",
+            "example_geneset_chip": "Example Crisp Drug Set",
+            "metadata_placeholder": "Search drug set metadata",
+            "resource_pie_caption": "Drug sets per Resource",
+            "preferred_name_singular": {
+                "entities": "Small molecule",
+                "libraries": "Drug set library",
+                "resources": "Resource",
+                "signatures": "Drug set"
+            },
+            "maxResourcesBeforeCollapse": 60
+        },
+        "landing": true,
+        "$validator": "/dcic/signature-commons-schema/v5/meta/schema/landing-ui.json"
     }
 }
