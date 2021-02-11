@@ -1,227 +1,281 @@
 {
-    "$validator": "/dcic/signature-commons-schema/v5/core/schema.json",
-    "id": "2d7449cd-08bd-4da2-8627-a906987cdb86",
-    "meta": {
-        "content": {
-            "nav": {
-                "API": {
-                    "active": true,
-                    "endpoint": "/API"
-                },
-                "Resources": {
-                    "active": true,
-                    "endpoint": "/Resources"
-                },
-                "MetadataSearch": {
-                    "active": true,
-                    "endpoint": "/MetadataSearch"
-                },
-                "SignatureSearch": {
-                    "active": true,
-                    "navName": "Drug Set Enrichment",
-                    "endpoint": "/DrugSetEnrichment"
-                }
-            },
-            "extraNav": [
-                {
-                  "type": "external",
-                  "endpoint": "https://appyters.maayanlab.cloud/Drugmonizome_ML/",
-                  "navName": "Drugmonizome ML"
-                },
-                {
-                  "type": "iframe",
-                  "endpoint": "/Tutorial",
-                  "navName": "Tutorial",
-                  "iframe": {
-                    "website-tutorial": {
-                      "src": "https://nbviewer.jupyter.org/github/MaayanLab/Drugmonizome/blob/master/website-tutorial.ipynb",
-                      "id": "website-tutorial",
-                      "frameBorder": 0,
-                      "height": 5500,
-                      "name": "Website Tutorial"
-                    },
-                    "api-tutorial": {
-                      "src": "https://nbviewer.jupyter.org/github/MaayanLab/Drugmonizome/blob/master/api-tutorial.ipynb",
-                      "id": "api-tutorial",
-                      "frameBorder": 0,
-                      "height": 11000,
-                      "name": "API Tutorial"
-                    }
-                  }
-                }
-              ],
-            "about": "Understanding the underlying molecular and structural similarities between seemingly heterogeneous sets of drugs can aid in identifying drug repurposing opportunities and assist in the discovery of novel properties for pre-clinical small molecules. A wealth of information about drug and small molecule structure, targets, indications and side effects, induced gene expression signatures, and other attributes are publicly available at web-based tools, databases, and repositories. By processing, abstracting, and aggregating information from these resources into drug set libraries, knowledge about novel properties of drugs and small molecules can be systematically imputed with machine learning. In addition, drug set libraries can be used as the underlying database for drug set enrichment analysis. Here, we present [Drugmonizome](https://maayanlab.cloud/drugmonizome) , a database with a search engine for querying annotated sets of drugs and small molecules metadata for performing drug set enrichment analysis. Utilizing the data within Drugmonizome we also developed [Drugmonizome-ML](https://appyters.maayanlab.cloud/Drugmonizome_ML/), an [Appyter](https://appyters.maayanlab.cloud/) that allows users to construct custom machine learning pipelines using the drug set libraries from Drugmonizome as feature and target vectors. To demonstrate the utility of Drugmonizome, drug sets from 12 independent in-vitro screens to identify [SARS-CoV-2 inhibitors were subjected to consensus enrichment analysis](https://maayanlab.cloud/covid19/). Despite the low overlap among these 12 independent in vitro studies, we were able to determine common biological processes and pathways critical for viral replication. To demonstrate Drugmonizome-ML, we constructed a machine learning pipeline to predict peripheral neuropathy as a potential side effect for preclinical small molecules. Overall, the Drugmonizome and Drugmonizome-ML resources provide rich diverse knowledge about drugs and small molecules for direct systems pharmacology applications.",
-            "github": "https://github.com/dcic/signature-commons-ui",
-            "text_1": "Explore an extensive collection of well-annotated drug set libraries",
-            "text_2": "Search across a broad gathering of association terms",
-            "text_3": "By",
-            "text_4": "Start using Signature Commons in your project",
-            "favicon": {
-                "alt": "Drugmonizome",
-                "src": "https://raw.githubusercontent.com/MaayanLab/Drugmonizome/master/drugmonizome-schemas/images/logo.ico",
-                "title": "Drugmonizome"
-            },
-            "powered": true,
-            "examples": [
-                {
-                    "type": "Overlap",
-                    "label": "Example Drug Set 1",
-                    "entities": "lopinavir\nremdesivir\nmefloquine\nloratadine\nalmitrine\ncamostat\npevonedistat\noctenidine\nnafamostat\npapaverine\napixaban\nalvocidib\nmethylene blue\nemetine\ncycloheximide\namuvatinib\nthimerosal\nhomoharringtonine\nposaconazole\npolidocanol\ndrotaverine\nketoconazole\nalisporivir\nregorafenib\nloteprednol\nlidoflazine\nchlormidazole\ntyrphostin\navasimibe\nbrexpiprazole\nsorafenib\nlonafarnib\ndapivirine\nflunarizine\njte-013\nravuconazole\nmibampator\noxiconazole\nzk-93423\ncetylpyridinium\navatrombopag\nph-797804\netifoxine\ndcpib\ncc-223\nvatalanib\ntioguanine\namg-9810\npexidartinib\ncarboxyamidotriazole"
-                },
-                {
-                    "type": "Overlap",
-                    "label": "Example Drug Set 2",
-                    "entities": "remdesivir\nalmitrine\nparicalcitol\nvincristine\nponatinib\nsirolimus\nhexachlorophene\ncarvedilol\nnitazoxanide\nnilotinib\npacritinib\neverolimus\nclofazimine\nlevobetaxolol\ndoxercalciferol\nnebivolol\ncalcipotriol\nvismodegib\ntemsirolimus\ndexpropranolol\ntrihexyphenidyl\ncloperastine\nceliprolol\nbupranolol\ncloranolol\npenbutolol\ntriclocarban\nhydroxystilbamidine\nacitretin\ncalcifediol\noxybenzone"
-                },
-                {
-                    "type": "Overlap",
-                    "label": "Example Drug Set 3",
-                    "entities": "lopinavir\namodiaquine\nremdesivir\nmefloquine\nchloroquine\nbazedoxifene\nanidulafungin\neltrombopag\ncyclosporine\nloperamide\nproscillaridin\nniclosamide\ndigoxin\nivacaftor\ndigitoxin\nabemaciclib\nhydroxyprogesterone\nciclesonide\nberbamine\ntetrandrine\nouabain\nsalinomycin\ngilteritinib\nhexachlorophene"
-                }
-            ],
-            "downloads": {
-                "gmt": "Download gmt file",
-                "tsv": "Download tsv file",
-                "ranked": "Download ranked signature",
-                "sigcom": true,
-                "enrichr": false,
-                "geneset": "Download drug set",
-                "library_json": "Download library as json",
-                "resource_json": "Download resource as json",
-                "signature_json": "Download signature as json"
-            },
-            "theme_mod": {
-                "palette": {
-                    "default": {
-                        "main": "#555"
-                    },
-                    "primary": {
-                        "main": "#0063ff"
-                    },
-                    "secondary": {
-                        "main": "rgb(204, 204, 153)"
-                    },
-                    "defaultCard": {
-                        "contrastText": "#FFF"
-                    },
-                    "defaultChip": {
-                        "contrastText": "#FFF"
-                    },
-                    "defaultButton": {
-                        "main": "#0063ff"
-                    }
-                },
-                "typography": {
-                    "fontFamily": "Roboto, Helvetica, Arial, sans-serif"
-                }
-            },
-            "ui_schema": "/dcic/signature-commons-schema/v5/meta/schema/ui-schema.json",
-            "header_info": {
-                "icon": {
-                    "alt": "Drugmonizome",
-                    "src": "https://raw.githubusercontent.com/MaayanLab/Drugmonizome/master/drugmonizome-schemas/images/logo.ico",
-                    "style": {
-                        "width": 50
-                    }
-                },
-                "header_left": "",
-                "header_right": "Drugmonizome"
-            },
-            "rank_search": false,
-            "footer_links": [],
-            "font_families": [
-                "https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
-            ],
-            "github_issues": "https://github.com/MaayanLab/drugmonizome-issues/issues",
-            "overlap_search": true,
-            "preferred_name": {
-                "entities": "Small molecules",
-                "libraries": "Drug set libraries",
-                "resources": "Resources",
-                "signatures": "Drug sets"
-            },
-            "bar_chart_style": {
-                "Bar": {
-                    "fill": "#0063ff"
-                },
-                "Chart": {
-                    "margin": {
-                        "top": 20,
-                        "left": 50,
-                        "right": 50,
-                        "bottom": 20
-                    }
-                },
-                "XAxis": {
-                    "tick": {
-                        "fontSize": 10
-                    },
-                    "angle": 45,
-                    "height": 50,
-                    "axisLine": false,
-                    "interval": 0,
-                    "tickLine": false,
-                    "textAnchor": "start"
-                },
-                "ResponsiveContainer": {
-                    "width": "100%",
-                    "height": 420
-                }
-            },
-            "entity_strategy": "lower",
-            "pie_chart_style": {
-                "Pie": {
-                    "fill": "#0063ff"
-                },
-                "Chart": {
-                    "width": 420,
-                    "height": 420
-                },
-                "Text_Label": {
-                    "fontSize": 10
-                },
-                "ResponsiveContainer": {
-                    "width": "100%",
-                    "height": 420
-                }
-            },
-            "search_examples": {
-                "entities": [
-                    "Imatinib",
-                    "Remdesivir",
-                    "Dexamethasone"
-                ],
-                "libraries": [
-                    "Side effects",
-                    "Pathways"
-                ],
-                "resources": [
-                    "PubChem",
-                    "L1000FWD",
-                    "SIDER"
-                ],
-                "signatures": [
-                    "Headache",
-                    "Dry mouth",
-                    "CXCL10"
-                ]
-            },
-            "counting_validator": "/dcic/signature-commons-schema/v5/meta/schema/counting.json",
-            "maxResourcesToShow": 40,
-            "deactivate_download": false,
-            "geneset_placeholder": "Small molecules that overlap with drug set",
-            "example_geneset_chip": "Example Crisp Drug Set",
-            "metadata_placeholder": "Search drug set metadata",
-            "resource_pie_caption": "Drug sets per Resource",
-            "preferred_name_singular": {
-                "entities": "Small molecule",
-                "libraries": "Drug set library",
-                "resources": "Resource",
-                "signatures": "Drug set"
-            },
-            "maxResourcesBeforeCollapse": 60
-        },
-        "landing": true,
-        "$validator": "/dcic/signature-commons-schema/v5/meta/schema/landing-ui.json"
-    }
+	"$validator": "/dcic/signature-commons-schema/v5/core/schema.json",
+	"id": "2d7449cd-08bd-4da2-8627-a906987cdb86",
+	"meta": {
+		"content": {
+			"nav": {
+				"API": {
+					"active": true,
+					"endpoint": "/API"
+				},
+				"Resources": {
+					"active": true,
+					"endpoint": "/Resources"
+				},
+				"MetadataSearch": {
+					"active": true,
+					"endpoint": "/MetadataSearch"
+				},
+				"SignatureSearch": {
+					"active": true,
+					"navName": "Drug Set Enrichment",
+					"endpoint": "/DrugSetEnrichment"
+				}
+			},
+			"extraNav": [
+				{
+					"type": "external",
+					"endpoint": "https://appyters.maayanlab.cloud/Drugmonizome_ML/",
+					"navName": "Drugmonizome ML"
+				},
+				{
+					"type": "iframe",
+					"endpoint": "/Tutorial",
+					"navName": "Tutorial",
+					"iframe": {
+						"website-tutorial": {
+							"src": "https://maayanlab.cloud/drugmonizome/static/tutorial/drugmonizome/website-tutorial.html",
+							"id": "website-tutorial",
+							"frameBorder": 0,
+							"height": 5500,
+							"name": "Website Tutorial"
+						},
+						"api-tutorial": {
+							"src": "https://nbviewer.jupyter.org/github/MaayanLab/Drugmonizome/blob/master/api-tutorial.ipynb",
+							"id": "api-tutorial",
+							"frameBorder": 0,
+							"height": 11000,
+							"name": "API Tutorial"
+						}
+					}
+				}
+			],
+			"about": "Understanding the underlying molecular and structural similarities between seemingly heterogeneous sets of drugs can aid in identifying drug repurposing opportunities and assist in the discovery of novel properties for pre-clinical small molecules. A wealth of information about drug and small molecule structure, targets, indications and side effects, induced gene expression signatures, and other attributes are publicly available at web-based tools, databases, and repositories. By processing, abstracting, and aggregating information from these resources into drug set libraries, knowledge about novel properties of drugs and small molecules can be systematically imputed with machine learning. In addition, drug set libraries can be used as the underlying database for drug set enrichment analysis. Here, we present [Drugmonizome](https://maayanlab.cloud/drugmonizome) , a database with a search engine for querying annotated sets of drugs and small molecules metadata for performing drug set enrichment analysis. Utilizing the data within Drugmonizome we also developed [Drugmonizome-ML](https://appyters.maayanlab.cloud/Drugmonizome_ML/), an [Appyter](https://appyters.maayanlab.cloud/) that allows users to construct custom machine learning pipelines using the drug set libraries from Drugmonizome as feature and target vectors. To demonstrate the utility of Drugmonizome, drug sets from 12 independent in-vitro screens to identify [SARS-CoV-2 inhibitors were subjected to consensus enrichment analysis](https://maayanlab.cloud/covid19/). Despite the low overlap among these 12 independent in vitro studies, we were able to determine common biological processes and pathways critical for viral replication. To demonstrate Drugmonizome-ML, we constructed a machine learning pipeline to predict peripheral neuropathy as a potential side effect for preclinical small molecules. Overall, the Drugmonizome and Drugmonizome-ML resources provide rich diverse knowledge about drugs and small molecules for direct systems pharmacology applications.",
+			"github": "https://github.com/dcic/signature-commons-ui",
+			"text_1": "Explore an extensive collection of well-annotated drug set libraries",
+			"text_2": "Search across a broad gathering of association terms",
+			"text_3": "By",
+			"text_4": "Start using Signature Commons in your project",
+			"favicon": {
+				"alt": "Drugmonizome",
+				"src": "https://raw.githubusercontent.com/MaayanLab/Drugmonizome/master/drugmonizome-schemas/images/logo.ico",
+				"title": "Drugmonizome"
+			},
+			"powered": true,
+			"examples": [
+				{
+					"type": "Overlap",
+					"label": "Example Drug Set 1",
+					"entities": "lopinavir\nremdesivir\nmefloquine\nloratadine\nalmitrine\ncamostat\npevonedistat\noctenidine\nnafamostat\npapaverine\napixaban\nalvocidib\nmethylene blue\nemetine\ncycloheximide\namuvatinib\nthimerosal\nhomoharringtonine\nposaconazole\npolidocanol\ndrotaverine\nketoconazole\nalisporivir\nregorafenib\nloteprednol\nlidoflazine\nchlormidazole\ntyrphostin\navasimibe\nbrexpiprazole\nsorafenib\nlonafarnib\ndapivirine\nflunarizine\njte-013\nravuconazole\nmibampator\noxiconazole\nzk-93423\ncetylpyridinium\navatrombopag\nph-797804\netifoxine\ndcpib\ncc-223\nvatalanib\ntioguanine\namg-9810\npexidartinib\ncarboxyamidotriazole"
+				},
+				{
+					"type": "Overlap",
+					"label": "Example Drug Set 2",
+					"entities": "remdesivir\nalmitrine\nparicalcitol\nvincristine\nponatinib\nsirolimus\nhexachlorophene\ncarvedilol\nnitazoxanide\nnilotinib\npacritinib\neverolimus\nclofazimine\nlevobetaxolol\ndoxercalciferol\nnebivolol\ncalcipotriol\nvismodegib\ntemsirolimus\ndexpropranolol\ntrihexyphenidyl\ncloperastine\nceliprolol\nbupranolol\ncloranolol\npenbutolol\ntriclocarban\nhydroxystilbamidine\nacitretin\ncalcifediol\noxybenzone"
+				},
+				{
+					"type": "Overlap",
+					"label": "Example Drug Set 3",
+					"entities": "lopinavir\namodiaquine\nremdesivir\nmefloquine\nchloroquine\nbazedoxifene\nanidulafungin\neltrombopag\ncyclosporine\nloperamide\nproscillaridin\nniclosamide\ndigoxin\nivacaftor\ndigitoxin\nabemaciclib\nhydroxyprogesterone\nciclesonide\nberbamine\ntetrandrine\nouabain\nsalinomycin\ngilteritinib\nhexachlorophene"
+				}
+			],
+			"downloads": {
+				"gmt": "Download gmt file",
+				"tsv": "Download tsv file",
+				"ranked": "Download ranked signature",
+				"sigcom": true,
+				"enrichr": false,
+				"geneset": "Download drug set",
+				"library_json": "Download library as json",
+				"resource_json": "Download resource as json",
+				"signature_json": "Download signature as json"
+			},
+			"theme_mod": {
+				"palette": {
+					"default": {
+						"main": "#555"
+					},
+					"primary": {
+						"main": "#0063ff"
+					},
+					"secondary": {
+						"main": "rgb(204, 204, 153)"
+					},
+					"defaultCard": {
+						"contrastText": "#FFF"
+					},
+					"defaultChip": {
+						"contrastText": "#FFF"
+					},
+					"defaultButton": {
+						"main": "#0063ff"
+					}
+				},
+				"typography": {
+					"fontFamily": "Roboto, Helvetica, Arial, sans-serif"
+				}
+			},
+			"ui_schema": "/dcic/signature-commons-schema/v5/meta/schema/ui-schema.json",
+			"header_info": {
+				"icon": {
+					"alt": "Drugmonizome",
+					"src": "https://raw.githubusercontent.com/MaayanLab/Drugmonizome/master/drugmonizome-schemas/images/logo.ico",
+					"style": {
+						"width": 50
+					}
+				},
+				"header_left": "",
+				"header_right": "Drugmonizome"
+			},
+			"rank_search": false,
+			"footer_links": [],
+			"font_families": [
+				"https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+			],
+			"github_issues": "https://github.com/MaayanLab/drugmonizome-issues/issues",
+			"overlap_search": true,
+			"preferred_name": {
+				"entities": "Small molecules",
+				"libraries": "Drug set libraries",
+				"resources": "Resources",
+				"signatures": "Drug sets"
+			},
+			"bar_chart_style": {
+				"Bar": {
+					"fill": "#0063ff"
+				},
+				"Chart": {
+					"margin": {
+						"top": 20,
+						"left": 50,
+						"right": 50,
+						"bottom": 20
+					}
+				},
+				"XAxis": {
+					"tick": {
+						"fontSize": 10
+					},
+					"angle": 45,
+					"height": 50,
+					"axisLine": false,
+					"interval": 0,
+					"tickLine": false,
+					"textAnchor": "start"
+				},
+				"ResponsiveContainer": {
+					"width": "100%",
+					"height": 420
+				}
+			},
+			"entity_strategy": "lower",
+			"pie_chart_style": {
+				"Pie": {
+					"fill": "#0063ff"
+				},
+				"Chart": {
+					"width": 420,
+					"height": 420
+				},
+				"Text_Label": {
+					"fontSize": 10
+				},
+				"ResponsiveContainer": {
+					"width": "100%",
+					"height": 420
+				}
+			},
+			"search_examples": {
+				"entities": [
+					"Imatinib",
+					"Remdesivir",
+					"Dexamethasone"
+				],
+				"libraries": [
+					"Side effects",
+					"Pathways"
+				],
+				"resources": [
+					"PubChem",
+					"L1000FWD",
+					"SIDER"
+				],
+				"signatures": [
+					"Headache",
+					"Dry mouth",
+					"CXCL10"
+				]
+			},
+			"counting_validator": "/dcic/signature-commons-schema/v5/meta/schema/counting.json",
+			"maxResourcesToShow": 40,
+			"deactivate_download": false,
+			"geneset_placeholder": "Small molecules that overlap with drug set",
+			"example_geneset_chip": "Example Crisp Drug Set",
+			"metadata_placeholder": "Search drug set metadata",
+			"resource_pie_caption": "Drug sets per Resource",
+			"preferred_name_singular": {
+				"entities": "Small molecule",
+				"libraries": "Drug set library",
+				"resources": "Resource",
+				"signatures": "Drug set"
+			},
+			"maxResourcesBeforeCollapse": 60,
+			"resource_order": {
+				"c7a3d76b-20e9-4d0e-a291-343085af0c89": {
+					"label": "DrugCentral",
+					"priority": 6
+				},
+				"9612d8ac-5331-4f00-9e5c-bdb01e207bb7": {
+					"label": "ATC Classification System",
+					"priority": 11
+				},
+				"867b7b71-5c34-45f4-8662-a04c73677b90": {
+					"label": "CREEDS",
+					"priority": 13
+				},
+				"dc744176-fe38-4097-b04a-632cd5465912": {
+					"label": "Drugbank",
+					"priority": 6
+				},
+				"640bff8d-1a6c-4436-9e8d-d6c0cdc4e8ca": {
+					"label": "L1000FWD",
+					"priority": 10
+				},
+				"6270bbcc-f0b4-4a82-add1-dbed0c72df62": {
+					"label": "PharmGKB",
+					"priority": 1
+				},
+				"1a45adc7-89ff-4e47-ba6e-95d7d70cfd43": {
+					"label": "PubChem",
+					"priority": 2
+				},
+				"9980fc58-d0fc-4770-bf7f-31ca3c6fb2bf": {
+					"label": "Drug Repurposing Hub",
+					"priority": 8
+				},
+				"85d4186b-a902-47ae-8d42-7e5115d15dfa": {
+					"label": "Geneshot",
+					"priority": 9
+				},
+				"953a5d0e-fa1c-4270-b5bc-8b64b5778051": {
+					"label": "KINOMEscan",
+					"priority": 12
+				},
+				"de488257-4dde-4a47-a9d4-ba196e851047": {
+					"label": "RDKit",
+					"priority": 5
+				},
+				"0dd36110-b67b-4546-ac36-974a6432896a": {
+					"label": "SIDER",
+					"priority": 3
+				},
+				"c1b37308-22fa-4387-bdf4-244995668094": {
+					"label": "STITCH",
+					"priority": 4
+				}
+			}
+		},
+		"landing": true,
+		"$validator": "/dcic/signature-commons-schema/v5/meta/schema/landing-ui.json"
+	}
 }
