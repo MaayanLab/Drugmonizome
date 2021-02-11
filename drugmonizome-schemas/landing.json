@@ -222,57 +222,57 @@
 			"maxResourcesBeforeCollapse": 60,
 			"resource_order": {
 				"c7a3d76b-20e9-4d0e-a291-343085af0c89": {
-					"label": "DrugCentral",
-					"priority": 6
-				},
-				"9612d8ac-5331-4f00-9e5c-bdb01e207bb7": {
-					"label": "ATC Classification System",
-					"priority": 11
-				},
-				"867b7b71-5c34-45f4-8662-a04c73677b90": {
-					"label": "CREEDS",
-					"priority": 13
-				},
-				"dc744176-fe38-4097-b04a-632cd5465912": {
-					"label": "Drugbank",
-					"priority": 6
-				},
-				"640bff8d-1a6c-4436-9e8d-d6c0cdc4e8ca": {
-					"label": "L1000FWD",
-					"priority": 10
-				},
-				"6270bbcc-f0b4-4a82-add1-dbed0c72df62": {
-					"label": "PharmGKB",
-					"priority": 1
-				},
-				"1a45adc7-89ff-4e47-ba6e-95d7d70cfd43": {
-					"label": "PubChem",
-					"priority": 2
-				},
-				"9980fc58-d0fc-4770-bf7f-31ca3c6fb2bf": {
-					"label": "Drug Repurposing Hub",
-					"priority": 8
-				},
-				"85d4186b-a902-47ae-8d42-7e5115d15dfa": {
-					"label": "Geneshot",
-					"priority": 9
-				},
-				"953a5d0e-fa1c-4270-b5bc-8b64b5778051": {
-					"label": "KINOMEscan",
-					"priority": 12
-				},
-				"de488257-4dde-4a47-a9d4-ba196e851047": {
-					"label": "RDKit",
-					"priority": 5
-				},
-				"0dd36110-b67b-4546-ac36-974a6432896a": {
-					"label": "SIDER",
-					"priority": 3
-				},
-				"c1b37308-22fa-4387-bdf4-244995668094": {
-					"label": "STITCH",
-					"priority": 4
-				}
+                    "label": "DrugCentral",
+                    "priority": 7
+                },
+                "9612d8ac-5331-4f00-9e5c-bdb01e207bb7": {
+                    "label": "ATC Classification System",
+                    "priority": 13
+                },
+                "867b7b71-5c34-45f4-8662-a04c73677b90": {
+                    "label": "CREEDS",
+                    "priority": 9
+                },
+                "dc744176-fe38-4097-b04a-632cd5465912": {
+                    "label": "Drugbank",
+                    "priority": 6
+                },
+                "640bff8d-1a6c-4436-9e8d-d6c0cdc4e8ca": {
+                    "label": "L1000FWD",
+                    "priority": 10
+                },
+                "6270bbcc-f0b4-4a82-add1-dbed0c72df62": {
+                    "label": "PharmGKB",
+                    "priority": 1
+                },
+                "1a45adc7-89ff-4e47-ba6e-95d7d70cfd43": {
+                    "label": "PubChem",
+                    "priority": 2
+                },
+                "9980fc58-d0fc-4770-bf7f-31ca3c6fb2bf": {
+                    "label": "Drug Repurposing Hub",
+                    "priority": 12
+                },
+                "85d4186b-a902-47ae-8d42-7e5115d15dfa": {
+                    "label": "Geneshot",
+                    "priority": 11
+                },
+                "953a5d0e-fa1c-4270-b5bc-8b64b5778051": {
+                    "label": "KINOMEscan",
+                    "priority": 8
+                },
+                "de488257-4dde-4a47-a9d4-ba196e851047": {
+                    "label": "RDKit",
+                    "priority": 5
+                },
+                "0dd36110-b67b-4546-ac36-974a6432896a": {
+                    "label": "SIDER",
+                    "priority": 3
+                },
+                "c1b37308-22fa-4387-bdf4-244995668094": {
+                    "label": "STITCH",
+                    "priority": 4
+                }
 			}
 		},
 		"landing": true,
