@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <style>
+            h1 {
+              text-align:center;
+              padding: 35px;
+            }
+            h2 {
+                font-size:14;
+                padding-left: 35px;
+            }
+            img {
+                max-width:75%;
+                max-height:75%;
+                display:block;
+                margin-left:auto;
+                margin-right:auto;
+            }
+
+            ol {
+                counter-reset: item;
+            }
+            ol li { display: block }
+
+            ol li:before {
+                content: counter(item) ". ";
+                counter-increment: item;
+                font-weight: bold;
+            }
+            
+        </style>
+    </head>
+    <body>
+        <h1>Navigating the Drugmonizome Website</h1>
+
+        <h2>Drugmonizome Metadata Search</h2>
+        <p style="padding-left: 35px">The metadata search page allows users to query biomedical terms to search for resources, drug set libraries, drug sets, or small molecules that include the query term. Users input a term of interest into the search field and click submit to launch the search. The user is then presented with a results page of resources, libraries, drug sets, or small molecules depending on their selection.
+        </p>
+        <img alt="metadata_search_page" src="drugmonizome-schemas/tutorial-images/metadata_search_page.svg" />
+        <p style="text-align:center"><b>Fig 1.</b> Metadata Search page with interactable elements highlighted</p>
+        <ol>
+            <li>Users can switch between metadata searches for resources, drug set libraries, drug sets, and small molecules using the toolbar. Example search terms are displayed above the toolbar.</li>
+            <li>When searching for drug sets, users have the ability to select filters for drug sets from a particular resource, library, or association type (i.e. genes, side effects, pathways, etc.).</li>
+            <li>Clicking the drop down menu allows users to download the drug set of interest or perform drug set enrichment analysis on the drug set.</li>
+            <li>Clicking on any of the drug set names brings the user to a page (<b>Fig 2.</b>) that includes metadata related to the drug set as well as the set of all small molecules included in the drug set. Users may also search for particular small molecules included in the drug set using the search bar.</li>
+        </ol>
+        <img alt="drug_set_page" src="drugmonizome-schemas/tutorial-images/drug_set_page.gif" />
+        <p style="text-align:center"><b>Fig 2.</b> Drug set page example showing drug set metadata and searchable small molecule set</p>
+
+        <h2>Drugmonizome Drug Set Enrichment</h2>
+        <p style="padding-left: 35px">The drug set enrichment page takes small molecule identifiers as input. Small molecules can be queried by name, InChI key, SMILES strings, as well as DrugBank IDs and Broad Institute IDs (BRD-IDs). If the entity is resolved within the database, it is marked with a green checkmark. When submitted, drug set enrichment analysis is performed on the input list.</p>
+        <img alt="enrichment_page" src="drugmonizome-schemas/tutorial-images/enrichment_page.png" />
+        <p style="text-align:center"><b>Fig 3.</b> Enrichment analysis page with "Example Drug Set 1" input in the search box</p>
+        <p style="padding-left: 35px">The results page displays the resources with enriched drug sets which can be expanded to peruse individual drug set libraries and drug sets within the libraries. The results for each library are capped to the top 100 enriched drug sets.</p>
+        <img alt="enrichment_results_page" src="drugmonizome-schemas/tutorial-images/enrichment_results_page.svg" />
+        <p style="text-align:center"><b>Fig 4.</b> Enrichment results page for example drug set</p>
+        <ol>
+            <li>Users can switch between drug data resources using the toolbar. Clicking between these resources will display drug set libraries from that resource with enriched drug sets.</li>
+            <li>Clicking on this icon will display the input small molecule list</li>
+            <li>The default visualization displayed for each library is a bar graph representing the top ranked terms from the drug set library ranked by p-value. Clicking on the alternative option displays a scatter plot (<b>Fig 5.</b>) with the top terms plotted by p-value (y-axis) and odds ratio (x-axis).</li>
+            <img alt="scatterplot.gif" src="drugmonizome-schemas/tutorial-images/scatterplot.gif" />
+            <p style="text-align:center"><b>Fig 5.</b> Switching between bar graph and scatter plot representations</p>
+            <li>Clicking on any of the drug set library names brings the user to a page (<b>Fig 6.</b>) that includes metadata related to the drug set as well as the set of all small molecules included in the drug set. Users may also search for particular small molecules included in the drug set using the search bar.</li>
+            <img alt="librar_results_page" src="drugmonizome-schemas/tutorial-images/library_results_page.gif" />
+            <p style="text-align:center"><b>Fig 6.</b> Exploring enriched drug sets within a particular library</p>
+        </ol>
+
+        <h2>Drugmonizome Resources</h2>
+        <p style="padding-left: 35px">A page of all resources in Drugmonizome is available. Clicking on any of the resources brings users to a page with identifying metadata for the resource and drug set libraries within the resource.</p>
+        <img alt="resources_page" src="drugmonizome-schemas/tutorial-images/resources_page.gif" />
+        <p style="text-align:center"><b>Fig 7.</b> Resources page</p>
+    </body>
+</html>
