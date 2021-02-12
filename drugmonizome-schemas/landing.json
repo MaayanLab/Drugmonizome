@@ -243,7 +243,7 @@
                 },
                 "6270bbcc-f0b4-4a82-add1-dbed0c72df62": {
                     "label": "PharmGKB",
-                    "priority": 1
+                    "priority": 3
                 },
                 "1a45adc7-89ff-4e47-ba6e-95d7d70cfd43": {
                     "label": "PubChem",
@@ -267,7 +267,7 @@
                 },
                 "0dd36110-b67b-4546-ac36-974a6432896a": {
                     "label": "SIDER",
-                    "priority": 3
+                    "priority": 1
                 },
                 "c1b37308-22fa-4387-bdf4-244995668094": {
                     "label": "STITCH",
