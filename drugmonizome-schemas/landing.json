@@ -274,7 +274,8 @@
                     "label": "STITCH",
                     "priority": 4
                 }
-			}
+            },
+            "analytics": "G-H9WD1TQG6S"
 		},
 		"landing": true,
 		"$validator": "/dcic/signature-commons-schema/v5/meta/schema/landing-ui.json"
