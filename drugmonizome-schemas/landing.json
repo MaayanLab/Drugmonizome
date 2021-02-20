@@ -39,19 +39,19 @@
 				{
 					"type": "Overlap",
 					"link": "https://www.researchsquare.com/article/rs-23951/v1",
-					"label": "69 in vitro COVID-19 hits from drug screen by Ellinger et al.",
+					"label": "69 in vitro COVID-19 hits from a drug screen by Ellinger et al.",
 					"entities": "lopinavir\nremdesivir\nmefloquine\nloratadine\nalmitrine\ncamostat\npevonedistat\noctenidine\nnafamostat\npapaverine\napixaban\nalvocidib\nmethylene blue\nemetine\ncycloheximide\namuvatinib\nthimerosal\nhomoharringtonine\nposaconazole\npolidocanol\ndrotaverine\nketoconazole\nalisporivir\nregorafenib\nloteprednol\nlidoflazine\nchlormidazole\ntyrphostin\navasimibe\nbrexpiprazole\nsorafenib\nlonafarnib\ndapivirine\nflunarizine\njte-013\nravuconazole\nmibampator\noxiconazole\nzk-93423\ncetylpyridinium\navatrombopag\nph-797804\netifoxine\ndcpib\ncc-223\nvatalanib\ntioguanine\namg-9810\npexidartinib\ncarboxyamidotriazole\nac1ndss5\nadoprazine\nai-10-49\nbp-897\ngsk2606414\nipag\nide225\nlgk-974\nly2228820\nnsc319726\npf-670462\nsb-612111\nvlx600\ncbipes\ncloconazole\nethaverine\nhematoporphyrin\nthioguanosine\nharringtonine"
 				},
 				{
 					"type": "Overlap",
 					"link": "https://www.biorxiv.org/content/10.1101/2020.04.21.054387v1",
-					"label": "31 in vitro COVID-19 hits from drug screen by Heiser et al.",
+					"label": "31 in vitro COVID-19 hits from a drug screen by Heiser et al.",
 					"entities": "remdesivir\nalmitrine\nparicalcitol\nvincristine\nponatinib\nsirolimus\nhexachlorophene\ncarvedilol\nnitazoxanide\nnilotinib\npacritinib\neverolimus\nclofazimine\nlevobetaxolol\ndoxercalciferol\nnebivolol\ncalcipotriol\nvismodegib\ntemsirolimus\ndexpropranolol\ntrihexyphenidyl\ncloperastine\nceliprolol\nbupranolol\ncloranolol\npenbutolol\ntriclocarban\nhydroxystilbamidine\nacitretin\ncalcifediol\noxybenzone"
 				},
 				{
 					"type": "Overlap",
 					"link": "https://pubmed.ncbi.nlm.nih.gov/32366720/",
-					"label": "24 in vitro COVID-19 hits from drug screen by Jeon et al.",
+					"label": "24 in vitro COVID-19 hits from a drug screen by Jeon et al.",
 					"entities": "lopinavir\namodiaquine\nremdesivir\nmefloquine\nchloroquine\nbazedoxifene\nanidulafungin\neltrombopag\ncyclosporine\nloperamide\nproscillaridin\nniclosamide\ndigoxin\nivacaftor\ndigitoxin\nabemaciclib\nhydroxyprogesterone\nciclesonide\nberbamine\ntetrandrine\nouabain\nsalinomycin\ngilteritinib\nhexachlorophene"
 				}
 			],
