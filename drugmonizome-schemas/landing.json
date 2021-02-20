@@ -22,34 +22,6 @@
 					"endpoint": "/DrugSetEnrichment"
 				}
 			},
-			"extraNav": [
-				{
-					"type": "external",
-					"endpoint": "https://appyters.maayanlab.cloud/Drugmonizome_ML/",
-					"navName": "Drugmonizome ML"
-				},
-				{
-					"type": "iframe",
-					"endpoint": "/Tutorial",
-					"navName": "Tutorial",
-					"iframe": {
-						"website-tutorial": {
-							"src": "https://maayanlab.cloud/drugmonizome/static/tutorial/drugmonizome/website-tutorial.html",
-							"id": "website-tutorial",
-							"frameBorder": 0,
-							"height": 5500,
-							"name": "Website Tutorial"
-						},
-						"api-tutorial": {
-							"src": "https://nbviewer.jupyter.org/github/MaayanLab/Drugmonizome/blob/master/api-tutorial.ipynb",
-							"id": "api-tutorial",
-							"frameBorder": 0,
-							"height": 11000,
-							"name": "API Tutorial"
-						}
-					}
-				}
-			],
 			"about": "Understanding the underlying molecular and structural similarities between seemingly heterogeneous sets of drugs can aid in identifying drug repurposing opportunities and assist in the discovery of novel properties for drugs and pre-clinical small molecules. A wealth of information about drug and small molecule structures, targets, indications and side effects, induced gene expression signatures, and other attributes are publicly available at web-based tools, databases, and repositories. By processing, abstracting, and aggregating information from these resources into drug set libraries, knowledge about novel properties of drugs and small molecules can be systematically imputed with machine learning. In addition, drug set libraries can be used as the underlying database for drug set enrichment analysis. Here, we present [Drugmonizome](https://maayanlab.cloud/drugmonizome) , a database with a search engine for querying annotated sets of drug and small molecule metadata for performing drug set enrichment analysis. The same processed drug and small molecule set data that is served by Drugmonizome is also served by [DrugEnrichr](https://maayanlab.cloud/DrugEnrichr/). Additionally, [ETL Appyters](https://appyters.maayanlab.cloud/#/?tags=Drugmonizome&q=ETL) are available for recreating the drug set libraries served by Drugmonizome and DrugEnrichr. Utilizing the data within Drugmonizome we also developed [Drugmonizome-ML](https://appyters.maayanlab.cloud/Drugmonizome_ML/), an [Appyter](https://appyters.maayanlab.cloud/) that allows users to construct custom machine learning pipelines using the drug set libraries from Drugmonizome as feature and target vectors. To demonstrate the utility of Drugmonizome, drug sets from 12 independent in-vitro screens to identify [SARS-CoV-2 inhibitors were subjected to consensus enrichment analysis](https://maayanlab.cloud/covid19/). Despite the low overlap among these 12 independent in vitro studies, we were able to determine common biological processes and pathways critical for viral replication. To demonstrate Drugmonizome-ML, we constructed a machine learning pipeline to predict peripheral neuropathy as a potential side effect for preclinical small molecules. Overall, the Drugmonizome and Drugmonizome-ML resources provide rich diverse knowledge about drugs and small molecules for direct systems pharmacology applications.",
 			"terms": "Drugmonizome, Drugmonizome-ML, and Signature Commons source code is available from GitHub under the Apache License 2.0. Commercial users should contact Mount Sinai Innovation Partners at <MSIPInfo@mssm.edu> for licensing.\n ## Disclaimer\n Drugmonizome is not to be used for treating or diagnosing human subjects. Drugmonizome or any documents available from this server are provided as is without any warranty of any kind, either express, implied, or statutory, including, but not limited to, any implied warranties of merchantability, fitness for particular purpose and freedom from infringement, or that Drugmonizome or any documents available from this server will be error free. The Ma'ayan Laboratory makes no representations that the use of Drugmonizome or any documents available from this server will not infringe any patent or proprietary rights of third parties. In no event will the Ma'ayan Laboratory or any of its members be liable for any damages, including but not limited to direct, indirect, special or consequential damages, arising out of, resulting from, or in any way connected with the use of Drugmonizome, Drugmonizome-ML or documents available from this server.",
 			"github": "https://github.com/MaayanLab/Drugmonizome",
@@ -66,20 +38,52 @@
 			"examples": [
 				{
 					"type": "Overlap",
-					"label": "50 in vitro COVID-19 hits from drug screen by Ellinger et al.",
-					"entities": "lopinavir\nremdesivir\nmefloquine\nloratadine\nalmitrine\ncamostat\npevonedistat\noctenidine\nnafamostat\npapaverine\napixaban\nalvocidib\nmethylene blue\nemetine\ncycloheximide\namuvatinib\nthimerosal\nhomoharringtonine\nposaconazole\npolidocanol\ndrotaverine\nketoconazole\nalisporivir\nregorafenib\nloteprednol\nlidoflazine\nchlormidazole\ntyrphostin\navasimibe\nbrexpiprazole\nsorafenib\nlonafarnib\ndapivirine\nflunarizine\njte-013\nravuconazole\nmibampator\noxiconazole\nzk-93423\ncetylpyridinium\navatrombopag\nph-797804\netifoxine\ndcpib\ncc-223\nvatalanib\ntioguanine\namg-9810\npexidartinib\ncarboxyamidotriazole"
+					"link": "https://www.researchsquare.com/article/rs-23951/v1",
+					"label": "69 in vitro COVID-19 hits from drug screen by Ellinger et al.",
+					"entities": "lopinavir\nremdesivir\nmefloquine\nloratadine\nalmitrine\ncamostat\npevonedistat\noctenidine\nnafamostat\npapaverine\napixaban\nalvocidib\nmethylene blue\nemetine\ncycloheximide\namuvatinib\nthimerosal\nhomoharringtonine\nposaconazole\npolidocanol\ndrotaverine\nketoconazole\nalisporivir\nregorafenib\nloteprednol\nlidoflazine\nchlormidazole\ntyrphostin\navasimibe\nbrexpiprazole\nsorafenib\nlonafarnib\ndapivirine\nflunarizine\njte-013\nravuconazole\nmibampator\noxiconazole\nzk-93423\ncetylpyridinium\navatrombopag\nph-797804\netifoxine\ndcpib\ncc-223\nvatalanib\ntioguanine\namg-9810\npexidartinib\ncarboxyamidotriazole\nac1ndss5\nadoprazine\nai-10-49\nbp-897\ngsk2606414\nipag\nide225\nlgk-974\nly2228820\nnsc319726\npf-670462\nsb-612111\nvlx600\ncbipes\ncloconazole\nethaverine\nhematoporphyrin\nthioguanosine\nharringtonine"
 				},
 				{
 					"type": "Overlap",
+					"link": "https://www.biorxiv.org/content/10.1101/2020.04.21.054387v1",
 					"label": "31 in vitro COVID-19 hits from drug screen by Heiser et al.",
 					"entities": "remdesivir\nalmitrine\nparicalcitol\nvincristine\nponatinib\nsirolimus\nhexachlorophene\ncarvedilol\nnitazoxanide\nnilotinib\npacritinib\neverolimus\nclofazimine\nlevobetaxolol\ndoxercalciferol\nnebivolol\ncalcipotriol\nvismodegib\ntemsirolimus\ndexpropranolol\ntrihexyphenidyl\ncloperastine\nceliprolol\nbupranolol\ncloranolol\npenbutolol\ntriclocarban\nhydroxystilbamidine\nacitretin\ncalcifediol\noxybenzone"
 				},
 				{
 					"type": "Overlap",
+					"link": "https://pubmed.ncbi.nlm.nih.gov/32366720/",
 					"label": "24 in vitro COVID-19 hits from drug screen by Jeon et al.",
 					"entities": "lopinavir\namodiaquine\nremdesivir\nmefloquine\nchloroquine\nbazedoxifene\nanidulafungin\neltrombopag\ncyclosporine\nloperamide\nproscillaridin\nniclosamide\ndigoxin\nivacaftor\ndigitoxin\nabemaciclib\nhydroxyprogesterone\nciclesonide\nberbamine\ntetrandrine\nouabain\nsalinomycin\ngilteritinib\nhexachlorophene"
 				}
 			],
+			"extraNav": [
+				{
+					"type": "external",
+					"navName": "Drugmonizome ML",
+					"endpoint": "https://appyters.maayanlab.cloud/Drugmonizome_ML/"
+				},
+				{
+					"type": "iframe",
+					"iframe": {
+						"api-tutorial": {
+							"id": "api-tutorial",
+							"src": "https://nbviewer.jupyter.org/github/MaayanLab/Drugmonizome/blob/master/api-tutorial.ipynb",
+							"name": "API Tutorial",
+							"height": 11000,
+							"frameBorder": 0
+						},
+						"website-tutorial": {
+							"id": "website-tutorial",
+							"src": "https://maayanlab.cloud/drugmonizome/static/tutorial/drugmonizome/website-tutorial.html",
+							"name": "Website Tutorial",
+							"height": 5500,
+							"frameBorder": 0
+						}
+					},
+					"navName": "Tutorial",
+					"endpoint": "/Tutorial"
+				}
+			],
+			"analytics": "G-H9WD1TQG6S",
 			"downloads": {
 				"gmt": "Download gmt file",
 				"tsv": "Download tsv file",
@@ -140,6 +144,60 @@
 				"libraries": "Drug set libraries",
 				"resources": "Resources",
 				"signatures": "Drug sets"
+			},
+			"resource_order": {
+				"0dd36110-b67b-4546-ac36-974a6432896a": {
+					"label": "SIDER",
+					"priority": 1
+				},
+				"1a45adc7-89ff-4e47-ba6e-95d7d70cfd43": {
+					"label": "PubChem",
+					"priority": 2
+				},
+				"6270bbcc-f0b4-4a82-add1-dbed0c72df62": {
+					"label": "PharmGKB",
+					"priority": 3
+				},
+				"640bff8d-1a6c-4436-9e8d-d6c0cdc4e8ca": {
+					"label": "L1000FWD",
+					"priority": 10
+				},
+				"85d4186b-a902-47ae-8d42-7e5115d15dfa": {
+					"label": "Geneshot",
+					"priority": 11
+				},
+				"867b7b71-5c34-45f4-8662-a04c73677b90": {
+					"label": "CREEDS",
+					"priority": 9
+				},
+				"953a5d0e-fa1c-4270-b5bc-8b64b5778051": {
+					"label": "KINOMEscan",
+					"priority": 8
+				},
+				"9612d8ac-5331-4f00-9e5c-bdb01e207bb7": {
+					"label": "ATC Classification System",
+					"priority": 13
+				},
+				"9980fc58-d0fc-4770-bf7f-31ca3c6fb2bf": {
+					"label": "Drug Repurposing Hub",
+					"priority": 12
+				},
+				"c1b37308-22fa-4387-bdf4-244995668094": {
+					"label": "STITCH",
+					"priority": 4
+				},
+				"c7a3d76b-20e9-4d0e-a291-343085af0c89": {
+					"label": "DrugCentral",
+					"priority": 7
+				},
+				"dc744176-fe38-4097-b04a-632cd5465912": {
+					"label": "Drugbank",
+					"priority": 6
+				},
+				"de488257-4dde-4a47-a9d4-ba196e851047": {
+					"label": "RDKit",
+					"priority": 5
+				}
 			},
 			"bar_chart_style": {
 				"Bar": {
@@ -220,62 +278,7 @@
 				"resources": "Resource",
 				"signatures": "Drug set"
 			},
-			"maxResourcesBeforeCollapse": 60,
-			"resource_order": {
-				"c7a3d76b-20e9-4d0e-a291-343085af0c89": {
-                    "label": "DrugCentral",
-                    "priority": 7
-                },
-                "9612d8ac-5331-4f00-9e5c-bdb01e207bb7": {
-                    "label": "ATC Classification System",
-                    "priority": 13
-                },
-                "867b7b71-5c34-45f4-8662-a04c73677b90": {
-                    "label": "CREEDS",
-                    "priority": 9
-                },
-                "dc744176-fe38-4097-b04a-632cd5465912": {
-                    "label": "Drugbank",
-                    "priority": 6
-                },
-                "640bff8d-1a6c-4436-9e8d-d6c0cdc4e8ca": {
-                    "label": "L1000FWD",
-                    "priority": 10
-                },
-                "6270bbcc-f0b4-4a82-add1-dbed0c72df62": {
-                    "label": "PharmGKB",
-                    "priority": 3
-                },
-                "1a45adc7-89ff-4e47-ba6e-95d7d70cfd43": {
-                    "label": "PubChem",
-                    "priority": 2
-                },
-                "9980fc58-d0fc-4770-bf7f-31ca3c6fb2bf": {
-                    "label": "Drug Repurposing Hub",
-                    "priority": 12
-                },
-                "85d4186b-a902-47ae-8d42-7e5115d15dfa": {
-                    "label": "Geneshot",
-                    "priority": 11
-                },
-                "953a5d0e-fa1c-4270-b5bc-8b64b5778051": {
-                    "label": "KINOMEscan",
-                    "priority": 8
-                },
-                "de488257-4dde-4a47-a9d4-ba196e851047": {
-                    "label": "RDKit",
-                    "priority": 5
-                },
-                "0dd36110-b67b-4546-ac36-974a6432896a": {
-                    "label": "SIDER",
-                    "priority": 1
-                },
-                "c1b37308-22fa-4387-bdf4-244995668094": {
-                    "label": "STITCH",
-                    "priority": 4
-                }
-            },
-            "analytics": "G-H9WD1TQG6S"
+			"maxResourcesBeforeCollapse": 60
 		},
 		"landing": true,
 		"$validator": "/dcic/signature-commons-schema/v5/meta/schema/landing-ui.json"
