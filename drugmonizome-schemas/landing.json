@@ -77,6 +77,13 @@
 							"name": "Website Tutorial",
 							"height": 5500,
 							"frameBorder": 0
+						},
+						"Drugmonizome_ML-tutorial": {
+							"id": "Drugmonizome_ML-tutorial",
+							"src": "https://maayanlab.cloud/drugmonizome/static/tutorial/drugmonizome/Drugmonizome_ML-tutorial.html",
+							"name": "Drugmonizome-ML Tutorial",
+							"height": 5500,
+							"frameBorder": 0
 						}
 					},
 					"navName": "Tutorial",

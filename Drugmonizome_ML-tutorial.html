@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <style>
+            h1 {
+              text-align:center;
+              padding: 35px;
+            }
+
+            h2 {
+                padding-left: 35px;
+            }
+
+            h3 {
+                font-size:1em;
+                padding-left: 35px;
+            }
+            
+            img {
+                max-width:75%;
+                max-height:75%;
+                display:block;
+                margin-left:auto;
+                margin-right:auto;
+            }
+
+            ol {
+                counter-reset: item;
+            }
+
+            ol li { display: block }
+
+            ol li:before {
+                content: counter(item) ". ";
+                counter-increment: item;
+                font-weight: bold;
+            }
+            
+        </style>
+    </head>
+    <body>
+        <h1>Navigating the Drugmonizome-ML Input Form</h1>
+        <p style="padding: 35px">Drugmonizome-ML integrates the Drugmonizome drug set libraries and chemical feature sets from the <a href="https://maayanlab.net/SEP-L1000/">SEP-L1000 project</a>. Because Drugmonizome combines small molecule attributes from many sources, integrating the drug set libraries into a machine learning platform may elucidate novel connections between small molecules and a variety of attributes ranging from diseases, side effects, drug targets, and more.</p>
+        <h2>Input Dataset Selection</h2>
+        <p style="padding-left: 35px">This section allows users to select datasets from the SEP-L1000 project and Drugmonizome to use as features for learning and classification. Each of the datasets’ contents are described using tooltips.</p>
+        <h3><u>SEP-L1000 Features</u></h3>
+        <img alt="SEP-L1000_features" src="drugmonizome-schemas/tutorial-images/Drugmonizome_ML-images/SEP-L1000_features.png" />
+        <p style="text-align:center"><b>Fig 1.</b> SEP-L1000 Feature List</p>
+        <p style="padding-left: 35px">This feature set is derived from the SEP-L1000 project that used L1000 gene expression signatures, GO Transformed Signatures, MLPCN Cell Morphological Profiles, and MACCS Fingerprints as the features for predicting novel side effects of small molecules. Additionally, we generated Morgan Chemical Fingerprints (nbits=2048, radius=4) for all compounds included in SEP-L1000 that also had gene expression signatures.</p>
+        <h3><u>L1000FWD Features</u></h3>
+        <img alt="drug_set_page" src="drugmonizome-schemas/tutorial-images/Drugmonizome_ML-images/L1000FWD_features.png" />
+        <p style="text-align:center"><b>Fig 2.</b> L1000FWD Feature List</p>
+        <p style="padding-left: 35px">The L1000FWD feature set is derived from L1000FWD drug set libraries contained in Drugmonizome. These feature vectors are binary and contain association data between small molecules and genes, GO terms, KEGG pathways, and predicted side effects based on queried L1000FWD gene expression signatures in SEP-L1000.</p>
+        <h3><u>Drug Target and Associated Gene Features</u></h3>
+        <img alt="drug_set_page" src="drugmonizome-schemas/tutorial-images/Drugmonizome_ML-images/targets&genes_features.png" />
+        <p style="text-align:center"><b>Fig 3.</b> Drug Target and Associated Gene Feature List</p>
+        <p style="padding-left: 35px">The drug targets and associated genes features are derived from various Drugmonizome drug set libraries that were curated from drug data repositories that contain drug-gene interactions. These feature vectors are binary and contain drug-gene associations from DrugBank, CREEEDS, DrugCentral, Drug Repurposing Hub, Geneshot, Kinomescan, PharmGKB, and STITCH.</p>
+        <h3><u>Indication, Mode of Action, and Side Effect Features</u></h3>
+        <img alt="drug_set_page" src="drugmonizome-schemas/tutorial-images/Drugmonizome_ML-images/indications_sideeffects_moa_features.png" />
+        <p style="text-align:center"><b>Fig 4.</b> Indication, MoA, Side Effect Feature List</p>
+        <p style="padding-left: 35px">The indications, mode of action, and side effect features are derived from Drugmonizome drug set libraries. These feature vectors are binary and contain drug-indication, drug-MOA, and drug-side effect interactions from ATC Codes, Drug Repurposing Hub, PharmGKB, and SIDER.</p>
+        <h3><u>Chemical Structure Features</u></h3>
+        <img alt="drug_set_page" src="drugmonizome-schemas/tutorial-images/Drugmonizome_ML-images/structural_features.png" />
+        <p style="text-align:center"><b>Fig 5.</b> Chemical Structure Feature List</p>
+        <p style="padding-left: 35px">The structural features are derived from Drugmonizome drug set libraries. These feature vectors are binary and contain MACCS and PubChem chemical fingerprints for all drugs and small molecules included in Drugmonizome.</p>
+        <p style="text-align:center">*The structural feature sets from Drugmonizome and SEP-L1000 differ on the basis of the underlying compound set.*</p>
+        <h3><u>Options for Augmenting the Feature Matrix</u></h3>
+        <img alt="drug_set_page" src="drugmonizome-schemas/tutorial-images/Drugmonizome_ML-images/input_feature_options.png" />
+        <p style="text-align:center"><b>Fig 6.</b> Input Feature Modifier Options</p>
+        <ul>
+            <li>If selecting features from various data sources, it is likely that not all compounds will be included across all feature sets. Users have the option of keeping drugs with missing data or alternatively dropping these compounds from the feature matrix.</li>
+            <li>Additionally, because some of the available feature sets are binary association matrices, users have the option of applying TF-IDF normalization to account for frequency of common and rare terms among the small molecules.</li>
+        </ul>
+        
+
+        <h2>Target Label Selection</h2>
+        <p style="padding-left: 35px">In this section users select their positive class label for a binary classification problem. Users may opt to:</p>
+        <ol>
+            <img alt="enrichment_page" src="drugmonizome-schemas/tutorial-images/Drugmonizome_ML-images/attribute_target_selection.png" />
+            <p style="text-align:center"><b>Fig 7.</b> Selecting target labels from Drugmonizome drug set libraries</p>
+            <li>Select an attribute from any of the Drugmonizome drug set libraries. An autocomplete field allows users to input terms of interest and relevant drug-set labels from Drugmonizome are offered as potential class labels.</li>
+            <img alt="enrichment_page" src="drugmonizome-schemas/tutorial-images/Drugmonizome_ML-images/list_target_selection.png" />
+            <p style="text-align:center"><b>Fig 8.</b> Upload section for \n separated .txt files of small molecules with positive class labels </p>
+            <li>Upload a newline separated .txt file of compounds to be used as positive examples of a class to predict. Example .txt files are available for download to understand the structure of the file. Furthermore, users can specify the way their entities are catalogued (either by name or InChI Key) within the text file. InChI Keys are the recommended format.</li>
+        </ol>
+        <p style="padding-left: 35px">Additionally, the <b>Include stereoisomers</b> option gives users the ability to choose whether to match compounds from the feature vector to the target vector using the first 14 characters of the InChI Key (which encodes chemical connectivity) thus including stereoisomers of a particular small molecule, or whether to consider only one form of a molecule and match by the whole InChI Key.</p>
+
+        <h2>Machine Learning Pipeline</h2>
+        <p style="padding-left: 35px">In this section users select their preferred machine learning algorithm, hyperparameters, and evaluation metrics.</p>
+        <img alt="enrichment_page" src="drugmonizome-schemas/tutorial-images/Drugmonizome_ML-images/data_vis.png" />
+        <p style="text-align:center"><b>Fig 9.</b> Data visualization options</p>
+        <ul>
+            <li>The <b>data visualization method</b> includes a drop-down list of various methods to visualize the input feature space. Visualization of the input feature space gives the user perspective regarding how the classes are distributed and clustered in the input feature matrix.</li>
+            <li>The <b>dimensionality reduction algorithm</b> menu offers a selection of methods to pre-process the and reduce the dimensionality of the input feature matrix.</li>
+            <li>The <b>machine learning feature selection</b> menu allows users to select their preferred feature selection method within the machine learning model. Feature selection reduces the number of input variables which may decrease computational cost and potentially improve model performance.</li>
+        </ul>
+        <img alt="enrichment_page" src="drugmonizome-schemas/tutorial-images/Drugmonizome_ML-images/machine_learning.png" />
+        <p style="text-align:center"><b>Fig 10.</b> Machine learning classifiers and hyperparameter options</p>
+        <p style="padding-left: 35px">The <b>machine learning algorithm</b> section offers 9 unique classifiers that the user may select. Each of the classifiers includes various model-specific hyperparameters that can be modified. Once a classifier is selected, it will be trained on the input features to make predictions.</p>
+        <img alt="enrichment_page" src="drugmonizome-schemas/tutorial-images/Drugmonizome_ML-images/cross_val.png" />
+        <p style="text-align:center"><b>Fig 11.</b> Cross-validation and scoring metric preferences</p>
+        <ul>
+            <li>Users can select whether they want to <b>calibrate algorithm predictions</b> which can remove model imparted bias.</li>
+            <li>The <b>cross-validation algorithm</b> drop-down menu includes various cross-validation methods for training and evaluating the pipeline. Stratified cross-validation methods are recommended to maintain class ratios across train/test splits. Additionally, the user may specify the number of cross-validation folds and how many times to repeat the cross-validation method.</li>
+            <li>Lastly, the user may specify <b>primary evaluation metrics</b> to assess model performance. For most cases, roc_auc is the recommended metric. Additionally, other <b>evaluation metrics</b> can be specified to quantify model performance.</li>
+        </ul>
+
+        <p style="text-align:center;padding: 35px">Once the input form is submitted, a Jupyter notebook is launched in the cloud and the results will be available for analysis when the notebook is done running.</p>
+        <p style="text-align:center;padding: 35px">To learn more about each of the methods employed in the input form we refer users to the scikit-learn documentation: <a href=https://scikit-learn.org/stable>https://scikit-learn.org/stable</a></p>
+
+
+    </body>
+</html>
