@@ -1,63 +1,133 @@
 [
-    {  
-        "$validator":"/dcic/signature-commons-schema/v5/core/schema.json",
-        "meta":
-        {
-            "Field_Name": "resources",
-            "Type": "table",
-            "Preferred_Name": "Resources",
-            "MDI_Icon": "mdi-web",
-            "Table_Count": true,
-            "Visible_On_Landing": true,
-            "Visible_On_Admin": true,
-            "$validator": "/dcic/signature-commons-schema/v5/meta/schema/counting.json"
-        }
-
-    },
-    {   
-        "$validator":"/dcic/signature-commons-schema/v5/core/schema.json",
-        "meta":
-            {
-                "Field_Name": "libraries",
-                "Type": "table",
-                "Preferred_Name": "Drug-set libraries",
-                "MDI_Icon": "mdi-library-books",
-                "Table_Count": true,
-                "Visible_On_Landing": true,
-                "Visible_On_Admin": true,
-                "$validator": "/dcic/signature-commons-schema/v5/meta/schema/counting.json"
-            }
-
-    },
-    {   
-        "$validator":"/dcic/signature-commons-schema/v5/core/schema.json",
-        "meta":
-            {
-                "Field_Name": "signatures",
-                "Type": "table",
-                "Preferred_Name": "Drug-sets",
-                "MDI_Icon": "mdi-fingerprint",
-                "Table_Count": true,
-                "Visible_On_Landing": true,
-                "Visible_On_Admin": true,
-                "$validator": "/dcic/signature-commons-schema/v5/meta/schema/counting.json"
-            }
-
-    },
     {
         "$validator":"/dcic/signature-commons-schema/v5/core/schema.json",
-        "meta":
-        {
-            "Field_Name": "meta.Association_Type",
-            "Type": "object",
-            "Preferred_Name": "Association Type",
-            "MDI_Icon": "mdi-flask",
-            "Table": "signatures",
-            "Pie_Count": true,
-            "$validator": "/dcic/signature-commons-schema/v5/meta/schema/counting.json"
-
+        "id":"563e14dc-9440-435e-92fa-f834ed7ff80d",
+        "meta":{
+           "icon":"mdi-web",
+           "text":"Resources",
+           "type":"table",
+           "group":{
+              "row":1,
+              "size":1,
+              "column":1,
+              "priority":1
+           },
+           "model":"resources",
+           "$validator":"/dcic/signature-commons-schema/v6/meta/schema/counting.json"
         }
-
-    }
-
+     },
+     {
+        "$validator":"/dcic/signature-commons-schema/v5/core/schema.json",
+        "id":"cd145653-7d8e-4c33-bac7-2a9c3a89efd8",
+        "meta":{
+           "icon":"mdi-web",
+           "text":"Resources",
+           "type":"filter",
+           "field":"resource",
+           "model":"signatures",
+           "priority":1,
+           "$validator":"/dcic/signature-commons-schema/v6/meta/schema/counting.json",
+           "search_field":"resource"
+        }
+     },
+     {
+        "$validator":"/dcic/signature-commons-schema/v5/core/schema.json",
+        "id":"cd145653-7d8e-4c33-bac7-2a9c3a89efd7",
+        "meta":{
+           "icon":"mdi-bookshelf",
+           "text":"Drug Set Library",
+           "type":"filter",
+           "field":"library",
+           "model":"signatures",
+           "priority":2,
+           "$validator":"/dcic/signature-commons-schema/v6/meta/schema/counting.json",
+           "search_field":"library"
+        }
+     },
+     {
+        "$validator":"/dcic/signature-commons-schema/v5/core/schema.json",
+        "id":"cd145653-7d8e-4c33-bac7-2a9c3a89efd9",
+        "meta":{
+           "icon":"mdi-ray-start-end",
+           "text":"Association Type",
+           "type":"filter",
+           "field":"meta.Association_Type",
+           "model":"signatures",
+           "priority":3,
+           "$validator":"/dcic/signature-commons-schema/v6/meta/schema/counting.json",
+           "search_field":"meta.Association_Type"
+        }
+     },
+     {
+        "$validator":"/dcic/signature-commons-schema/v5/core/schema.json",
+        "id":"63856f42-cd5c-4434-ae42-505818a88f3f",
+        "meta":{
+           "icon":"mdi-bookshelf",
+           "text":"Drug set libraries",
+           "type":"table",
+           "group":{
+              "row":1,
+              "size":1,
+              "column":2,
+              "priority":1
+           },
+           "model":"libraries",
+           "$validator":"/dcic/signature-commons-schema/v6/meta/schema/counting.json"
+        }
+     },
+     {
+        "$validator":"/dcic/signature-commons-schema/v5/core/schema.json",
+        "id":"fe720ca7-83fb-4691-93d8-1b6d2921062a",
+        "meta":{
+           "icon":"mdi-pill",
+           "text":"Drug sets",
+           "type":"table",
+           "group":{
+              "row":1,
+              "size":1,
+              "column":3,
+              "priority":1
+           },
+           "model":"signatures",
+           "$validator":"/dcic/signature-commons-schema/v6/meta/schema/counting.json"
+        }
+     },
+     {
+        "$validator":"/dcic/signature-commons-schema/v5/core/schema.json",
+        "id":"35dbf56e-1d1c-4f6f-8de6-6573b7e0d26c",
+        "meta":{
+           "icon":"mdi-ray-start-end",
+           "text":"Drug Sets per Association Type",
+           "type":"pie",
+           "field":"meta.Association_Type",
+           "group":{
+              "row":2,
+              "size":6,
+              "column":2,
+              "priority":1
+           },
+           "model":"signatures",
+           "$validator":"/dcic/signature-commons-schema/v6/meta/schema/counting.json",
+           "search_field":"meta.Association_Type"
+        }
+     },
+     {
+        "$validator":"/dcic/signature-commons-schema/v5/core/schema.json",
+        "id":"53eeb654-7746-435d-87d5-58aca1fcea1c",
+        "meta":{
+           "icon":"mdi-web",
+           "text":"Drug Sets per Resource",
+           "type":"pie",
+           "field":"resource",
+           "group":{
+              "row":2,
+              "size":6,
+              "column":1,
+              "priority":1
+           },
+           "model":"signatures",
+           "$validator":"/dcic/signature-commons-schema/v6/meta/schema/counting.json",
+           "search_field":"meta.Resource_Name"
+        }
+     }
 ]

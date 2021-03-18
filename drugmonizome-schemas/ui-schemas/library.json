@@ -1,43 +1,116 @@
 {
-	"$validator": "/dcic/signature-commons-schema/v5/core/schema.json",
-	"meta": {
-		"match": {
-			"${$validator}": "/@?dcic/signature-commons-schema/(v[0-9]+/)?core/library.json"
-		},
-		"$validator": "/dcic/signature-commons-schema/v5/meta/schema/ui-schema.json",
-		"properties": {
-			"Image": {
-				"alt": "${meta['Library_name']}",
-				"src": "${meta['Icon']}",
-				"icon": true,
-				"type": "img",
-				"priority": 1,
-				"visibility": 1
-			},
-			"Library": {
-				"name": true,
-				"text": "${meta['Library_name']}",
-				"type": "text",
-				"priority": 1,
-				"visibility": 1
-			},
-			"Description": {
-				"text": "${meta['Description']}",
-				"type": "text",
-				"priority": 2,
-				"subtitle": true,
-				"visibility": 1,
-				"description": true,
-				"MDI_Icon": "mdi-flask-outline"
-			},
-			"Association Type": {
-				"text": "${meta['Association_Type']}",
-				"type": "text",
-				"priority": 2,
-				"visibility": 1,
-				"MDI_Icon": "mdi-flask-outline"
-
-			}
-		}
-	}
+    "$validator":"/dcic/signature-commons-schema/v5/core/schema.json",
+    "id":"a8e32ccf-b601-4048-8878-9a250f052783",
+    "meta":{
+        "match":{
+        "${$validator}":"/@?dcic/signature-commons-schema/(v[0-9]+/)?core/library.json"
+        },
+        "$validator":"/dcic/signature-commons-schema/v6/meta/schema/ui-schema.json",
+        "properties":{
+        "Image":{
+            "alt":"${meta['Library_name']}",
+            "src":"${meta['Icon']}",
+            "type":"img",
+            "priority":1,
+            "visibility":1
+        },
+        "Title":{
+            "text":"${meta['Library_name']}",
+            "type":"title",
+            "priority":1,
+            "visibility":1
+        },
+        "Search":{
+            "type":"search-props",
+            "search_examples":[
+                "genes",
+                "side effects"
+            ]
+        },
+        "Dataset":{
+            "icon":"mdi-download",
+            "text":"${meta['Download_link']}",
+            "type":"component",
+            "props":{
+                "data":{
+                    "type":"prop-array",
+                    "items":[
+                    {
+                        "type":"prop-object",
+                        "properties":{
+                            "url":{
+                                "text":"${meta['Download_link_name']}",
+                                "type":"text"
+                            },
+                            "icon":{
+                                "text":"mdi-download",
+                                "type":"text"
+                            },
+                            "text":{
+                                "text":"Download DMT (Drug Name)",
+                                "type":"text"
+                            }
+                        }
+                    },
+                    {
+                        "type":"prop-object",
+                        "properties":{
+                            "url":{
+                                "text":"${meta['Download_link_inchikey']}",
+                                "type":"text"
+                            },
+                            "icon":{
+                                "text":"mdi-download",
+                                "type":"text"
+                            },
+                            "text":{
+                                "text":"Download DMT (InChIKey)",
+                                "type":"text"
+                            }
+                        }
+                    }
+                    ]
+                }
+            },
+            "location":"chip",
+            "priority":10,
+            "component":"download",
+            "visibility":1
+        },
+        "Library":{
+            "text":"${meta['Library_name']}",
+            "type":"title",
+            "priority":1,
+            "visibility":1
+        },
+        "Description":{
+            "icon":"mdi-flask-outline",
+            "text":"${meta['Description']}",
+            "type":"subtitle",
+            "priority":2,
+            "visibility":1,
+            "description":true
+        },
+        "Signature_Count":{
+            "text":"${scores.signature_count}",
+            "type":"score",
+            "field":"scores.signature_count",
+            "priority":1,
+            "visibility":1
+        },
+        "Association Type":{
+            "icon":"mdi-ray-start-end",
+            "text":"${meta['Association_Type']}",
+            "type":"text",
+            "priority":2,
+            "visibility":1
+        },
+        "Association_Filter":{
+            "icon":"mdi-ray-start-end",
+            "text":"Association Type",
+            "type":"filter",
+            "field":"meta.Association_Type"
+        }
+        }
+    }
 }

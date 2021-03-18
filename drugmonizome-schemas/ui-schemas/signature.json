@@ -1,86 +1,84 @@
 {
-	"$validator": "/dcic/signature-commons-schema/v5/core/schema.json",
-	"meta": {
-		"match": {
-			"${$validator}": "/@?dcic/signature-commons-schema/(v[0-9]+/)?core/signature.json"
-		},
-		"$validator": "/dcic/signature-commons-schema/v5/meta/schema/ui-schema.json",
-        "properties": {
-            "Image": {
-                "visibility": 1,
-                "type": "img",
-                "src": "${library.meta['Icon']}",
-                "alt": "${library.meta['Library_name']}",
-                "priority": 1,
-                "icon": true
-            },
-            "Library": {
-                "visibility": 1,
-                "type": "text",
-                "text": "${library.meta['Library_name']}",
-                "priority": 1,
-                "subtitle": true
-            },
-            "Association Term": {
-                "visibility": 1,
-                "type": "text",
-                "text": "${meta['Term'][0]['Name']}",
-                "name": true,
-                "priority": 1
-            },
-            "Association Type": {
-                "visibility": 1,
-                "type": "text",
-                "MDI_Icon":"mdi-ray-start-end",
-                "text": "${meta['Association_Type']}",
-                "priority": 2
-            },
-            "P-Value": {
-                "visibility": 1,
-                "condition": {
-                    "${meta['p-value']}": {
-                        "ne": null
-                    }
-                },
-                "columnType": "number",
-                "columnOptions": {
-                    "sort": true,
-                    "sortDirection": "asc"
-                },
-                "type": "text",
-                "text": "${meta['p-value']}",
-                "sortable": true,
-                "score": true,
-                "priority": 8
-            },
-            "Odds Ratio": {
-                "visibility": 1,
-                "condition": {
-                    "${meta.oddsratio}": {
-                        "ne": null
-                    }
-                },
-                "columnType": "number",
-                "type": "text",
-                "text": "${meta.oddsratio}",
-                "sortable": true,
-                "score": true,
-                "priority": 9
-            },
-            "Drug Set Size": {
-                "visibility": 1,
-                "condition": {
-                    "${meta.setsize}": {
-                        "ne": null
-                    }
-                },
-                "columnType": "number",
-                "type": "text",
-                "text": "${meta.setsize}",
-                "sortable": true,
-                "score": true,
-                "priority": 7
-            }
-        }
+    "$validator":"/dcic/signature-commons-schema/v5/core/schema.json",
+    "id":"36438508-3129-4f77-a370-2949dd220ef4",
+    "meta":{
+       "match":{
+          "${$validator}":"/@?dcic/signature-commons-schema/(v[0-9]+/)?core/signature.json"
+       },
+       "$validator":"/dcic/signature-commons-schema/v6/meta/schema/ui-schema.json",
+       "properties":{
+          "Image":{
+             "alt":"${library.meta['Library_name']}",
+             "src":"${library.meta['Icon']}",
+             "type":"img",
+             "priority":1,
+             "visibility":1
+          },
+          "Library":{
+             "text":"${library.meta['Library_name']}",
+             "type":"subtitle",
+             "priority":1,
+             "visibility":1
+          },
+          "P-Value":{
+             "icon":"mdi-trophy-award",
+             "text":"${scores['p-value'] < 0.000001 ? Number.parseFloat(scores['p-value']).toExponential(4):Number.parseFloat(scores['p-value']).toPrecision(4)}",
+             "type":"text",
+             "field":"scores.p-value",
+             "priority":2,
+             "visibility":1
+          },
+          "Odds Ratio":{
+             "icon":"mdi-trophy-award",
+             "text":"${Number.parseFloat(scores['odds ratio']).toPrecision(4)}",
+             "type":"text",
+             "field":"scores.odds ratio",
+             "priority":3,
+             "visibility":1
+          },
+          "Q-Value (BH)":{
+             "icon":"mdi-trophy-award",
+             "text":"${scores['q-value (BH)'] < 0.000001 ? Number.parseFloat(scores['q-value (BH)']).toExponential(4):Number.parseFloat(scores['q-value (BH)']).toPrecision(4)}",
+             "type":"text",
+             "field":"scores.q-value (BH)",
+             "priority":4,
+             "visibility":1
+          },
+          "Drug Set Size":{
+             "text":"${score.setsize}",
+             "type":"score",
+             "field":"score.setsize",
+             "priority":3,
+             "condition":{
+                "${score.setsize}":{
+                   "ne":null
+                }
+             },
+             "columnType":"number",
+             "visibility":1
+          },
+          "Association Term":{
+             "text":"${meta['Term'][0]['Name']}",
+             "type":"title",
+             "priority":1,
+             "visibility":1
+          },
+          "Association Type":{
+             "icon":"mdi-ray-start-end",
+             "text":"${meta['Association_Type']}",
+             "type":"text",
+             "field":"meta.Association_Type",
+             "priority":1,
+             "visibility":1
+          },
+          "Q-Value (Bonferroni)":{
+             "icon":"mdi-trophy-award",
+             "text":"${scores['q-value (Bonferroni)'] < 0.000001 ? Number.parseFloat(scores['q-value (Bonferroni)']).toExponential(4):Number.parseFloat(scores['q-value (Bonferroni)']).toPrecision(4)}",
+             "type":"text",
+             "field":"scores.q-value (Bonferroni)",
+             "priority":5,
+             "visibility":1
+          }
+       }
     }
-}
+ }

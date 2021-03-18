@@ -1,42 +1,87 @@
 {
-    "$validator": "/dcic/signature-commons-schema/v5/core/schema.json",
-        "meta": {
-            "type": "entity",
-            "match": {
-                "${$validator}": "/@?dcic/signature-commons-schema/(v[0-9]+/)?core/entity.json"
-            },
-            "$validator": "/dcic/signature-commons-schema/v5/meta/schema/ui-schema.json",
-            "properties": {
-                "Name": {
-                    "name": true,
-                    "text": "${meta.Name}",
-                    "type": "text",
-                    "field": "meta.Name",
-                    "priority": 1,
-                    "visibility": 1
-                },
-                "InChI_key": {
-                    "text": "${meta.InChI_key}",
-                    "type": "text",
-                    "field": "meta.InChI_key",
-                    "priority": 2,
-                    "visibility": 2
-                },
-                "Synonyms": {
-                    "text": "${meta.Synonyms}",
-                    "type": "text",
-                    "field": "meta.Synonyms",
-                    "priority": 3,
-                    "synonyms": true,
-                    "visibility": 1
-                },
-                "SMILES": {
-                    "text": "${meta.SMILES}",
-                    "type": "text",
-                    "field": "meta.SMILES",
-                    "priority": 3,
-                    "visibility": 2
-                }
-            }
-        }
+    "$validator":"/dcic/signature-commons-schema/v5/core/schema.json",
+    "id":"5f476b42-0e1f-4fa0-9269-5f330843b48b",
+    "meta":{
+       "type":"entity",
+       "match":{
+          "${$validator}":"/@?dcic/signature-commons-schema/(v[0-9]+/)?core/entity.json"
+       },
+       "$validator":"/dcic/signature-commons-schema/v6/meta/schema/ui-schema.json",
+       "properties":{
+          "Name":{
+             "text":"${meta.Name}",
+             "type":"title",
+             "field":"meta.Name",
+             "priority":1,
+             "visibility":1
+          },
+          "InChI":{
+             "text":"${meta.InChI_key}",
+             "type":"alternative",
+             "field":"meta.InChI_key",
+             "priority":2,
+             "visibility":2
+          },
+          "SMILES":{
+             "text":"${meta.SMILES}",
+             "type":"text",
+             "field":"meta.SMILES",
+             "priority":3,
+             "synonyms":true,
+             "visibility":2
+          },
+          "Search":{
+             "type":"search-props",
+             "search_examples":[
+                "genes",
+                "side effects"
+             ]
+          },
+          "Library":{
+             "icon":"mdi-bookshelf",
+             "text":"Drug Set Library",
+             "type":"filter",
+             "field":"library",
+             "priority":2
+          },
+          "Resource":{
+             "icon":"mdi-web",
+             "text":"Resource",
+             "type":"filter",
+             "field":"resource",
+             "priority":1,
+             "search_field":"library"
+          },
+          "Synonyms":{
+             "type":"array",
+             "field":"meta.Synonyms",
+             "object":"meta.Synonyms",
+             "priority":3,
+             "synonyms":true,
+             "visibility":1
+          },
+          "Accession":{
+             "text":"${meta.Accession}",
+             "type":"text",
+             "field":"meta.Accession",
+             "priority":3,
+             "synonyms":true,
+             "visibility":2
+          },
+          "InChI_key":{
+             "text":"${meta.InChI_key}",
+             "type":"text",
+             "field":"meta.InChI_key",
+             "priority":2,
+             "visibility":2
+          },
+          "Association_Filter":{
+             "icon":"mdi-ray-start-end",
+             "text":"Association Type",
+             "type":"filter",
+             "field":"meta.Association_Type",
+             "priority":3
+          }
+       }
     }
+ }
