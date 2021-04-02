@@ -14,21 +14,91 @@
 				},
 				"MetadataSearch": {
 					"active": true,
-					"endpoint": "/MetadataSearch"
+					"endpoint": "/MetadataSearch",
+					"props": {
+						"model_tabs": [
+							"resources",
+							"libraries",
+							"signatures",
+							"entities"
+						],
+						"entry_model": "signatures",
+						"placeholder": "Search for any term, i.e. drug, side effects, or a disease",
+						"examples": {
+							"entities": [
+								"Imatinib",
+								"Remdesivir",
+								"Dexamethasone"
+							],
+							"libraries": [
+								"Side effects",
+								"Pathways"
+							],
+							"resources": [
+								"PubChem",
+								"L1000FWD",
+								"SIDER"
+							],
+							"signatures": [
+								"Headache",
+								"Dry mouth",
+								"CXCL10"
+							]
+						}
+					}
 				},
 				"SignatureSearch": {
 					"active": true,
 					"navName": "Drug Set Enrichment",
-					"endpoint": "/DrugSetEnrichment"
+					"endpoint": "/DrugSetEnrichment",
+					"props": {
+						"types": {
+							"Overlap": {
+								"active": true,
+								"placeholder": "Place your drug sets here.",
+								"switch": "Drug Sets",
+								"icon": "mdi-set-merge",
+								"examples": [
+									{
+										"link": "https://www.researchsquare.com/article/rs-23951/v1",
+										"label": "69 in vitro COVID-19 hits from a drug screen by Ellinger et al.",
+										"input": {
+											"type": "Overlap",
+											"entities": "lopinavir\nremdesivir\nmefloquine\nloratadine\nalmitrine\ncamostat\npevonedistat\noctenidine\nnafamostat\npapaverine\napixaban\nalvocidib\nmethylene blue\nemetine\ncycloheximide\namuvatinib\nthimerosal\nhomoharringtonine\nposaconazole\npolidocanol\ndrotaverine\nketoconazole\nalisporivir\nregorafenib\nloteprednol\nlidoflazine\nchlormidazole\ntyrphostin\navasimibe\nbrexpiprazole\nsorafenib\nlonafarnib\ndapivirine\nflunarizine\njte-013\nravuconazole\nmibampator\noxiconazole\nzk-93423\ncetylpyridinium\navatrombopag\nph-797804\netifoxine\ndcpib\ncc-223\nvatalanib\ntioguanine\namg-9810\npexidartinib\ncarboxyamidotriazole\nac1ndss5\nadoprazine\nai-10-49\nbp-897\ngsk2606414\nipag\nide225\nlgk-974\nly2228820\nnsc319726\npf-670462\nsb-612111\nvlx600\ncbipes\ncloconazole\nethaverine\nhematoporphyrin\nthioguanosine\nharringtonine"
+										}
+									},
+									{
+										"link": "https://www.biorxiv.org/content/10.1101/2020.04.21.054387v1",
+										"label": "39 in vitro COVID-19 hits from a drug screen by Heiser et al.",
+										"input": {
+											"type": "Overlap",
+											"entities": "remdesivir\nalmitrine\nparicalcitol\nvincristine\nponatinib\nrapamycin\nhexachlorophene\ncarvedilol\nnitazoxanide\nnilotinib\npacritinib\neverolimus\nclofazimine\nlevobetaxolol\ndoxercalciferol\nnebivolol hcl\ncalcipotriene\nvismodegib\ntemsirolimus\naloxistatin\ndexpropranolol\nzotarolimus\ntrihexyphenidyl\ncloperastine\nceliprolol\nint-747\nbupranolol\ncloranolol\nipi-145\ncx-4945\npenbutolol\nbyl719\ncarazolol\ngs-441524\ntriclocarban\nhydroxystilbamidine\nacitretin\ncalcifediol\noxybenzone"
+										}
+									},
+									{
+										"link": "https://pubmed.ncbi.nlm.nih.gov/32366720/",
+										"label": "27 in vitro COVID-19 hits from a drug screen by Jeon et al.",
+										"input": {
+											"type": "Overlap",
+											"entities": "lopinavir\namodiaquine\nremdesivir\nmefloquine\nchloroquine\ncepharanthine\nbazedoxifene\nanidulafungin\neltrombopag\ncyclosporine\nloperamide\nproscillaridin\nniclosamide\ndigoxin\nivacaftor\ndigitoxin\nabemaciclib\ntilorone\nhydroxyprogesterone\nciclesonide\nberbamine\ntetrandrine\noxyclozanide\nouabain\nsalinomycin\ngilteritinib\nhexachlorophene"
+										}
+									}
+								]
+							},
+							"Rank": {
+								"active": false
+							}
+						}
+					}
+				}
+			},
+			"pie_chart_style": {
+				"Pie": {
+				  "fill": "#0063ff"
 				}
 			},
 			"about": "Understanding the underlying molecular and structural similarities between seemingly heterogeneous sets of drugs can aid in identifying drug repurposing opportunities and assist in the discovery of novel properties for drugs and pre-clinical small molecules. A wealth of information about drug and small molecule structures, targets, indications and side effects, induced gene expression signatures, and other attributes are publicly available at web-based tools, databases, and repositories. By processing, abstracting, and aggregating information from these resources into drug set libraries, knowledge about novel properties of drugs and small molecules can be systematically imputed with machine learning. In addition, drug set libraries can be used as the underlying database for drug set enrichment analysis. Here, we present [Drugmonizome](https://maayanlab.cloud/drugmonizome) , a database with a search engine for querying annotated sets of drug and small molecule metadata for performing drug set enrichment analysis. The same processed drug and small molecule set data that is served by Drugmonizome is also served by [DrugEnrichr](https://maayanlab.cloud/DrugEnrichr/). Additionally, [ETL Appyters](https://appyters.maayanlab.cloud/#/?tags=Drugmonizome&q=ETL) are available for recreating the drug set libraries served by Drugmonizome and DrugEnrichr. Utilizing the data within Drugmonizome we also developed [Drugmonizome-ML](https://appyters.maayanlab.cloud/Drugmonizome_ML/), an [Appyter](https://appyters.maayanlab.cloud/) that allows users to construct custom machine learning pipelines using the drug set libraries from Drugmonizome as feature and target vectors. To demonstrate the utility of Drugmonizome, drug sets from 12 independent in-vitro screens to identify [SARS-CoV-2 inhibitors were subjected to consensus enrichment analysis](https://maayanlab.cloud/covid19/). Despite the low overlap among these 12 independent in vitro studies, we were able to determine common biological processes and pathways critical for viral replication. To demonstrate Drugmonizome-ML, we constructed a machine learning pipeline to predict peripheral neuropathy as a potential side effect for preclinical small molecules. Overall, the Drugmonizome and Drugmonizome-ML resources provide rich diverse knowledge about drugs and small molecules for direct systems pharmacology applications.",
 			"terms": "Drugmonizome, Drugmonizome-ML, and Signature Commons source code is available from GitHub under the Apache License 2.0. Commercial users should contact Mount Sinai Innovation Partners at <MSIPInfo@mssm.edu> for licensing.\n ## Disclaimer\n Drugmonizome is not to be used for treating or diagnosing human subjects. Drugmonizome or any documents available from this server are provided as is without any warranty of any kind, either express, implied, or statutory, including, but not limited to, any implied warranties of merchantability, fitness for particular purpose and freedom from infringement, or that Drugmonizome or any documents available from this server will be error free. The Ma'ayan Laboratory makes no representations that the use of Drugmonizome or any documents available from this server will not infringe any patent or proprietary rights of third parties. In no event will the Ma'ayan Laboratory or any of its members be liable for any damages, including but not limited to direct, indirect, special or consequential damages, arising out of, resulting from, or in any way connected with the use of Drugmonizome, Drugmonizome-ML or documents available from this server.",
-			"github": "https://github.com/MaayanLab/Drugmonizome",
-			"text_1": "Explore an extensive collection of well-annotated drug set libraries",
-			"text_2": "Search across a broad gathering of association terms",
-			"text_3": "By",
-			"text_4": "Start using Signature Commons in your project",
 			"favicon": {
 				"alt": "Drugmonizome",
 				"src": "https://raw.githubusercontent.com/MaayanLab/Drugmonizome/master/drugmonizome-schemas/images/logo.ico",
@@ -45,14 +115,14 @@
 				{
 					"type": "Overlap",
 					"link": "https://www.biorxiv.org/content/10.1101/2020.04.21.054387v1",
-					"label": "31 in vitro COVID-19 hits from a drug screen by Heiser et al.",
-					"entities": "remdesivir\nalmitrine\nparicalcitol\nvincristine\nponatinib\nsirolimus\nhexachlorophene\ncarvedilol\nnitazoxanide\nnilotinib\npacritinib\neverolimus\nclofazimine\nlevobetaxolol\ndoxercalciferol\nnebivolol\ncalcipotriol\nvismodegib\ntemsirolimus\ndexpropranolol\ntrihexyphenidyl\ncloperastine\nceliprolol\nbupranolol\ncloranolol\npenbutolol\ntriclocarban\nhydroxystilbamidine\nacitretin\ncalcifediol\noxybenzone"
+					"label": "39 in vitro COVID-19 hits from a drug screen by Heiser et al.",
+					"entities": "remdesivir\nalmitrine\nparicalcitol\nvincristine\nponatinib\nrapamycin\nhexachlorophene\ncarvedilol\nnitazoxanide\nnilotinib\npacritinib\neverolimus\nclofazimine\nlevobetaxolol\ndoxercalciferol\nnebivolol hcl\ncalcipotriene\nvismodegib\ntemsirolimus\naloxistatin\ndexpropranolol\nzotarolimus\ntrihexyphenidyl\ncloperastine\nceliprolol\nint-747\nbupranolol\ncloranolol\nipi-145\ncx-4945\npenbutolol\nbyl719\ncarazolol\ngs-441524\ntriclocarban\nhydroxystilbamidine\nacitretin\ncalcifediol\noxybenzone"
 				},
 				{
 					"type": "Overlap",
 					"link": "https://pubmed.ncbi.nlm.nih.gov/32366720/",
-					"label": "24 in vitro COVID-19 hits from a drug screen by Jeon et al.",
-					"entities": "lopinavir\namodiaquine\nremdesivir\nmefloquine\nchloroquine\nbazedoxifene\nanidulafungin\neltrombopag\ncyclosporine\nloperamide\nproscillaridin\nniclosamide\ndigoxin\nivacaftor\ndigitoxin\nabemaciclib\nhydroxyprogesterone\nciclesonide\nberbamine\ntetrandrine\nouabain\nsalinomycin\ngilteritinib\nhexachlorophene"
+					"label": "27 in vitro COVID-19 hits from a drug screen by Jeon et al.",
+					"entities": "lopinavir\namodiaquine\nremdesivir\nmefloquine\nchloroquine\ncepharanthine\nbazedoxifene\nanidulafungin\neltrombopag\ncyclosporine\nloperamide\nproscillaridin\nniclosamide\ndigoxin\nivacaftor\ndigitoxin\nabemaciclib\ntilorone\nhydroxyprogesterone\nciclesonide\nberbamine\ntetrandrine\noxyclozanide\nouabain\nsalinomycin\ngilteritinib\nhexachlorophene"
 				}
 			],
 			"extraNav": [
@@ -84,17 +154,6 @@
 				}
 			],
 			"analytics": "G-H9WD1TQG6S",
-			"downloads": {
-				"gmt": "Download gmt file",
-				"tsv": "Download tsv file",
-				"ranked": "Download ranked signature",
-				"sigcom": true,
-				"enrichr": false,
-				"geneset": "Download drug set",
-				"library_json": "Download library as json",
-				"resource_json": "Download resource as json",
-				"signature_json": "Download signature as json"
-			},
 			"theme_mod": {
 				"palette": {
 					"default": {
@@ -120,7 +179,6 @@
 					"fontFamily": "Roboto, Helvetica, Arial, sans-serif"
 				}
 			},
-			"ui_schema": "/dcic/signature-commons-schema/v5/meta/schema/ui-schema.json",
 			"header_info": {
 				"icon": {
 					"alt": "Drugmonizome",
@@ -132,13 +190,12 @@
 				"header_left": "",
 				"header_right": "Drugmonizome"
 			},
-			"rank_search": false,
 			"footer_links": [],
 			"font_families": [
 				"https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
 			],
+			"github": "https://github.com/MaayanLab/Drugmonizome",
 			"github_issues": "https://github.com/MaayanLab/drugmonizome-issues/issues",
-			"overlap_search": true,
 			"preferred_name": {
 				"entities": "Small molecules",
 				"libraries": "Drug set libraries",
@@ -199,79 +256,6 @@
 					"priority": 5
 				}
 			},
-			"bar_chart_style": {
-				"Bar": {
-					"fill": "#0063ff"
-				},
-				"Chart": {
-					"margin": {
-						"top": 20,
-						"left": 50,
-						"right": 50,
-						"bottom": 20
-					}
-				},
-				"XAxis": {
-					"tick": {
-						"fontSize": 10
-					},
-					"angle": 45,
-					"height": 50,
-					"axisLine": false,
-					"interval": 0,
-					"tickLine": false,
-					"textAnchor": "start"
-				},
-				"ResponsiveContainer": {
-					"width": "100%",
-					"height": 420
-				}
-			},
-			"entity_strategy": "lower",
-			"pie_chart_style": {
-				"Pie": {
-					"fill": "#0063ff"
-				},
-				"Chart": {
-					"width": 420,
-					"height": 420
-				},
-				"Text_Label": {
-					"fontSize": 10
-				},
-				"ResponsiveContainer": {
-					"width": "100%",
-					"height": 420
-				}
-			},
-			"search_examples": {
-				"entities": [
-					"Imatinib",
-					"Remdesivir",
-					"Dexamethasone"
-				],
-				"libraries": [
-					"Side effects",
-					"Pathways"
-				],
-				"resources": [
-					"PubChem",
-					"L1000FWD",
-					"SIDER"
-				],
-				"signatures": [
-					"Headache",
-					"Dry mouth",
-					"CXCL10"
-				]
-			},
-			"counting_validator": "/dcic/signature-commons-schema/v5/meta/schema/counting.json",
-			"maxResourcesToShow": 40,
-			"deactivate_download": false,
-			"geneset_placeholder": "Small molecules that overlap with drug set",
-			"example_geneset_chip": "Example Crisp Drug Set",
-			"metadata_placeholder": "Search drug set metadata",
-			"resource_pie_caption": "Drug sets per Resource",
 			"preferred_name_singular": {
 				"entities": "Small molecule",
 				"libraries": "Drug set library",
