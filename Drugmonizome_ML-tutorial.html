@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <style>
+            h1 {
+              text-align:center;
+              padding: 20px;
+            }
+
+            h2 {
+                padding-left: 35px;
+            }
+
+            h3 {
+                font-size:1em;
+                padding-left: 35px;
+            }
+            
+            img {
+                max-width:75%;
+                max-height:75%;
+                display:block;
+                margin-left:auto;
+                margin-right:auto;
+            }
+
+            ol {
+                counter-reset: item;
+            }
+
+            ol li { display: block }
+
+            ol li:before {
+                content: counter(item) ". ";
+                counter-increment: item;
+                font-weight: bold;
+            }
+            
+        </style>
+    </head>
+    <body>
+        <h1>Navigating the Drugmonizome-ML Appyter</h1>
+        <p style="padding: 10px">A wealth of data from a multitude of sources is readily available for thousands of bioactive small molecules. This information can be harnessed to develop machine learning models that utilize such data to predict the properties of small molecules that are poorly annotated. The Drugmonizome database draws upon a variety of publicly available resources to label each compound by its associations with pathways, protein targets, induced gene expression profiles, chemical features, and other attributes. Drugmonizome-ML is a machine learning platform built on top of the Drugmonizome datasets to predict novel indications and other attributes such as drug targets or side effects for bioactive small molecules. Drugmonizome-ML is an Appyter that executes a machine learning pipeline as a Jupyter notebook. To demonstrate Drugmonizome-ML, a case study is presented where we predict drugs and small molecules that may induce peripheral neuropathy as a side effect. Several of the predicted candidates were corroborated by independent published studies. Taken together, Drugmonizome-ML is a general-purpose machine learning platform that can be useful for tasks of predicting drug and small molecule attributes using rapidly accumulating pharmacological knowledge.</p>
+        <img alt="workflow" src="drugmonizome-schemas/tutorial-images/Drugmonizome_ML-images/drugmonizome-ML_workflow.svg" />
+
+        <h2>Input Dataset Selection</h2>
+        <p style="padding-left: 35px">This section allows users to select datasets from the SEP-L1000 project and Drugmonizome to use as features for learning and classification. Each of the datasets’ contents are described using tooltips.</p>
+        <h3><u>SEP-L1000 Features</u></h3>
+        <img alt="SEP-L1000_features" src="drugmonizome-schemas/tutorial-images/Drugmonizome_ML-images/SEP-L1000_features.png" />
+        <p style="text-align:center"><b>Fig 1.</b> SEP-L1000 Feature List</p>
+        <p style="padding-left: 35px">This feature set is derived from the SEP-L1000 project that used L1000 gene expression signatures, GO Transformed Signatures, MLPCN Cell Morphological Profiles, and MACCS Fingerprints as the features for predicting novel side effects of small molecules. Additionally, we generated Morgan Chemical Fingerprints (nbits=2048, radius=4) for all compounds included in SEP-L1000 that also had gene expression signatures.</p>
+        <h3><u>L1000FWD Features</u></h3>
+        <img alt="L1000FWD_features" src="drugmonizome-schemas/tutorial-images/Drugmonizome_ML-images/L1000FWD_features.png" />
+        <p style="text-align:center"><b>Fig 2.</b> L1000FWD Feature List</p>
+        <p style="padding-left: 35px">The L1000FWD feature set is derived from L1000FWD drug set libraries contained in Drugmonizome. These feature vectors are binary and contain association data between small molecules and genes, GO terms, KEGG pathways, and predicted side effects based on queried L1000FWD gene expression signatures in SEP-L1000.</p>
+        <h3><u>Drug Target and Associated Gene Features</u></h3>
+        <img alt="targets&genes_features" src="drugmonizome-schemas/tutorial-images/Drugmonizome_ML-images/targets&genes_features.png" />
+        <p style="text-align:center"><b>Fig 3.</b> Drug Target and Associated Gene Feature List</p>
+        <p style="padding-left: 35px">The drug targets and associated genes features are derived from various Drugmonizome drug set libraries that were curated from drug data repositories that contain drug-gene interactions. These feature vectors are binary and contain drug-gene associations from DrugBank, CREEEDS, DrugCentral, Drug Repurposing Hub, Geneshot, Kinomescan, PharmGKB, and STITCH.</p>
+        <h3><u>Indication, Mode of Action, and Side Effect Features</u></h3>
+        <img alt="indications_sideeffects_moa_features" src="drugmonizome-schemas/tutorial-images/Drugmonizome_ML-images/indications_sideeffects_moa_features.png" />
+        <p style="text-align:center"><b>Fig 4.</b> Indication, MoA, Side Effect Feature List</p>
+        <p style="padding-left: 35px">The indications, mode of action, and side effect features are derived from Drugmonizome drug set libraries. These feature vectors are binary and contain drug-indication, drug-MOA, and drug-side effect interactions from ATC Codes, Drug Repurposing Hub, PharmGKB, and SIDER.</p>
+        <h3><u>Chemical Structure Features</u></h3>
+        <img alt="structural_features" src="drugmonizome-schemas/tutorial-images/Drugmonizome_ML-images/structural_features.png" />
+        <p style="text-align:center"><b>Fig 5.</b> Chemical Structure Feature List</p>
+        <p style="padding-left: 35px">The structural features are derived from Drugmonizome drug set libraries. These feature vectors are binary and contain MACCS and PubChem chemical fingerprints for all drugs and small molecules included in Drugmonizome.</p>
+        <p style="text-align:center">*The structural feature sets from Drugmonizome and SEP-L1000 differ on the basis of the underlying compound set.*</p>
+        <h3><u>Options for Augmenting the Feature Matrix</u></h3>
+        <img alt="input_feature_options" src="drugmonizome-schemas/tutorial-images/Drugmonizome_ML-images/input_feature_options.png" />
+        <p style="text-align:center"><b>Fig 6.</b> Input Feature Modifier Options</p>
+        <ul>
+            <li>If selecting features from various data sources, it is likely that not all compounds will be included across all feature sets. Users have the option of keeping drugs with missing data or alternatively dropping these compounds from the feature matrix.</li>
+            <li>Additionally, because some of the available feature sets are binary association matrices, users have the option of applying TF-IDF normalization to account for frequency of common and rare terms among the small molecules.</li>
+        </ul>
+        
+
+        <h2>Target Label Selection</h2>
+        <p style="padding-left: 35px">In this section users select their positive class label for a binary classification problem. Users may opt to:</p>
+        <ol>
+            <img alt="attribute_target_selection" src="drugmonizome-schemas/tutorial-images/Drugmonizome_ML-images/attribute_target_selection.png" />
+            <p style="text-align:center"><b>Fig 7.</b> Selecting target labels from Drugmonizome drug set libraries</p>
+            <li>Select an attribute from any of the Drugmonizome drug set libraries. An autocomplete field allows users to input terms of interest and relevant drug-set labels from Drugmonizome are offered as potential class labels.</li>
+            <img alt="list_target_selection" src="drugmonizome-schemas/tutorial-images/Drugmonizome_ML-images/list_target_selection.png" />
+            <p style="text-align:center"><b>Fig 8.</b> Upload section for \n separated .txt files of small molecules with positive class labels </p>
+            <li>Upload a newline separated .txt file of compounds to be used as positive examples of a class to predict. Example .txt files are available for download to understand the structure of the file. Furthermore, users can specify the way their entities are catalogued (either by name or InChI Key) within the text file. InChI Keys are the recommended format.</li>
+        </ol>
+        <p style="padding-left: 35px">Additionally, the <b>Include stereoisomers</b> option gives users the ability to choose whether to match compounds from the feature vector to the target vector using the first 14 characters of the InChI Key (which encodes chemical connectivity) thus including stereoisomers of a particular small molecule, or whether to consider only one form of a molecule and match by the whole InChI Key.</p>
+
+        <h2>Machine Learning Pipeline</h2>
+        <p style="padding-left: 35px">In this section users select their preferred machine learning algorithm, hyperparameters, and evaluation metrics.</p>
+        <img alt="data_vis" src="drugmonizome-schemas/tutorial-images/Drugmonizome_ML-images/data_vis.png" />
+        <p style="text-align:center"><b>Fig 9.</b> Data visualization options</p>
+        <ul>
+            <li>The <b>data visualization method</b> includes a drop-down list of various methods to visualize the input feature space. Visualization of the input feature space gives the user perspective regarding how the classes are distributed and clustered in the input feature matrix.</li>
+            <li>The <b>dimensionality reduction algorithm</b> menu offers a selection of methods to pre-process the and reduce the dimensionality of the input feature matrix.</li>
+            <li>The <b>machine learning feature selection</b> menu allows users to select their preferred feature selection method within the machine learning model. Feature selection reduces the number of input variables which may decrease computational cost and potentially improve model performance.</li>
+        </ul>
+        <img alt="machine_learning" src="drugmonizome-schemas/tutorial-images/Drugmonizome_ML-images/machine_learning.png" />
+        <p style="text-align:center"><b>Fig 10.</b> Machine learning classifiers and hyperparameter options</p>
+        <p style="padding-left: 35px">The <b>machine learning algorithm</b> section offers 9 unique classifiers that the user may select. Each of the classifiers includes various model-specific hyperparameters that can be modified. Once a classifier is selected, it will be trained on the input features to make predictions.</p>
+        <img alt="cross-validation" src="drugmonizome-schemas/tutorial-images/Drugmonizome_ML-images/cross_val.png" />
+        <p style="text-align:center"><b>Fig 11.</b> Cross-validation and scoring metric preferences</p>
+        <ul>
+            <li>Users can select whether they want to <b>calibrate algorithm predictions</b> which can remove model imparted bias.</li>
+            <li>The <b>cross-validation algorithm</b> drop-down menu includes various cross-validation methods for training and evaluating the pipeline. Stratified cross-validation methods are recommended to maintain class ratios across train/test splits. Additionally, the user may specify the number of cross-validation folds and how many times to repeat the cross-validation method.</li>
+            <li>Lastly, the user may specify <b>primary evaluation metrics</b> to assess model performance. For most cases, roc_auc is the recommended metric. Additionally, other <b>evaluation metrics</b> can be specified to quantify model performance.</li>
+        </ul>
+
+        <p style="text-align:center;padding: 35px">To learn more about each of the methods employed in the input form we refer users to the scikit-learn documentation: <a href=https://scikit-learn.org/stable>https://scikit-learn.org/stable</a></p>
+
+        <h2>Navigating the Deployed Jupyter Notebook</h2>
+        <p style="padding-left: 35px">Once the input form is submitted, a Jupyter notebook is launched in the cloud and the results will be available for analysis when the notebook is done running. Here we will analyze the peripheral neuropathy case study that used LINCS Gene Expression Profiles and Morgan Fingerprints as features with "peripheral neuropathy" (taken from the SIDER Side Effects drug set library) as the target class to predict.</p>
+        <img alt="notebook_options" src="drugmonizome-schemas/tutorial-images/Drugmonizome_ML-images/notebook_options.svg" />
+        <p style="text-align:center"><b>Fig 12. </b>Jupyter Notebook Toggleable Options</p>
+        <ol>
+            <li>To learn more about Appyters, users can click any of the header tabs to navigate to information pages.</li>
+            <li>Users have the option to download the notebook, toggle code when viewing the notebook, as well as the option to run the notebook locally.</li>
+            <li>A table of contents has interactable elements that, once clicked, navigate the user to a particular section of the pipeline within the notebook.</li>
+        </ol>
+
+        <h3><u>Input Dataset and Target Class Selection</u></h3>
+        <img alt="input_dataset" src="drugmonizome-schemas/tutorial-images/Drugmonizome_ML-images/input_dataset.png" />
+        <p style="text-align:center"><b>Fig 13. </b>Input Dataset Section</p>
+        <p style="padding-left: 35px">In this section users can view the feature matrix that was generated based on the selected features from the input form. In this case we have a feature matrix composed of 19,898 compounds and 3026 features from LINCS Gene Expression Profiles and TF-IDF normalized Morgan Fingerprints.</p>
+        <p style="padding-left: 35px">Additionally, the user is informed of how the target array is constructed, how many compounds from the target array are included in the feature matrix, and how many compounds were discarded because they were not included in the feature matrix. Unmatched compounds are available for download.</p>
+
+        <h3><u>Dimensionality Reduction and Visualization</u></h3>
+        <img alt="dimensionality_reduction" src="drugmonizome-schemas/tutorial-images/Drugmonizome_ML-images/dimensionality_reduction.png" />
+        <p style="text-align:center"><b>Fig 14. </b>Dimensionality Reduction and Visualization Section with input feature space visualized using UMAP</p>
+        <p style="padding-left: 35px">In this section users can view the input feature space using the dimensionality reduction and visualization methods that they selected in the input form. Positive class labels are labeled within the visualization so that users can get an idea of how the class of interest is clustered in the feature space.</p>
+
+        <h3><u>Machine Learning</u></h3>
+        <img alt="machine_learning_notebook" src="drugmonizome-schemas/tutorial-images/Drugmonizome_ML-images/machine_learning_notebook.png" />
+        <p style="text-align:center"><b>Fig 15. </b>Machine learning pipeline information and reported roc_auc. Each of the curves for the evaluation metrics is available for download.</p>
+        <p style="padding-left: 35px">In this section, the machine learning pipeline with the settings and hyperparameters that the user specified is executed. The Receiver Operating Characteristic curve, Precision-recall curve, and confusion matrix are available for download.</p>
+        <img alt="roc_curve" src="drugmonizome-schemas/tutorial-images/Drugmonizome_ML-images/roc_curve.png" />
+        <p style="text-align:center"><b>Fig 16. </b>Receiver Operating Characteristic (ROC) Curve</p>
+        <img alt="prc_curve" src="drugmonizome-schemas/tutorial-images/Drugmonizome_ML-images/prc_curve.png" />
+        <p style="text-align:center"><b>Fig 17. </b>Precision-Recall (PR) Curve</p>
+        <img alt="confusion_matrix" src="drugmonizome-schemas/tutorial-images/Drugmonizome_ML-images/confusion_matrix.png" />
+        <p style="text-align:center"><b>Fig 18. </b>Confusion Matrix</p>
+
+        <h3><u>Examine Predictions</u></h3>
+        <p style="padding-left: 35px">In this section, users can examine the predictions made by the model in addition to the distributions of mean probability estimates and t-statistics.</p>
+        <img alt="mean_probability" src="drugmonizome-schemas/tutorial-images/Drugmonizome_ML-images/mean_probability.png" />
+        <p style="text-align:center"><b>Fig 19. </b>Mean probability distribution</p>
+        <img alt="t_stats" src="drugmonizome-schemas/tutorial-images/Drugmonizome_ML-images/t_stats.png" />
+        <p style="text-align:center"><b>Fig 20. </b>T-statistics distribution</p>
+        <img alt="umap_predictions" src="drugmonizome-schemas/tutorial-images/Drugmonizome_ML-images/umap_predictions.png" />
+        <p style="text-align:center"><b>Fig 21. </b>UMAP representation of feature space with predictions overlayed</p>
+        <img alt="prediction_table" src="drugmonizome-schemas/tutorial-images/Drugmonizome_ML-images/prediction_table.png" />
+        <p style="text-align:center"><b>Fig 22. </b>Table of top predicted compounds</p>
+
+        <h3><u>Feature Importance</u></h3>
+        <p style="padding-left: 35px">In this section, users are presented with a table of the most important features used by the model to make predictions, as well as the distribution of average and cumulative sum of feature importance.</p>
+        <img alt="mean_probability" src="drugmonizome-schemas/tutorial-images/Drugmonizome_ML-images/importance_table.png" />
+        <p style="text-align:center"><b>Fig 23.</b>Feature importance table</p>
+        <img alt="t_stats" src="drugmonizome-schemas/tutorial-images/Drugmonizome_ML-images/importance_graph.png" />
+        <p style="text-align:center"><b>Fig 24. </b>Feature importance graphs with distribution scores for each feature and a cumulative distribution score across all features.</p>
+    </body>
+</html>

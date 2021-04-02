@@ -1,42 +1,57 @@
 {
-    "meta": {
-        "$validator": "/dcic/signature-commons-schema/v5/meta/schema/ui-schema.json",
-        "match": {
-            "${$validator}": "/@?dcic/signature-commons-schema/(v[0-9]+/)?core/resource.json"
-        },
-        "properties": {
-            "Image": {
-                "visibility": 1,
-                "type": "img",
-                "src": "${meta['icon']}",
-                "alt": "${meta['Resource_Name']}",
-                "text": "${meta['Resource_Name']}",
-                "priority": 1,
-                "icon": true,
-                "name": true
-            },
-            "Description": {
-                "visibility": 1,
-                "type": "text",
-                "field": "Description",
-                "text": "${meta['description']}",
-                "priority": 2,
-                "description": true
-            },
-            "URL": {
-                "visibility": 1,
-                "type": "text",
-                "field": "URL",
-                "text": "${meta['URL']}",
-                "priority": 3
-            },
-            "Signature Count": {
-                "visibility": 1,
-                "type": "text",
-                "field": "Signature_Count",
-                "text": "${meta['Signature_Count']}",
-                "priority": 3
-            }
-        }
+    "$validator":"/dcic/signature-commons-schema/v5/core/schema.json",
+    "id":"4c9c67b4-7814-4ee4-b804-c1e90d616074",
+    "meta":{
+       "match":{
+          "${$validator}":"/@?dcic/signature-commons-schema/(v[0-9]+/)?core/resource.json"
+       },
+       "$validator":"/dcic/signature-commons-schema/v6/meta/schema/ui-schema.json",
+       "properties":{
+          "URL":{
+             "href":"${meta['URL']}",
+             "text":"${meta['URL']}",
+             "type":"display",
+             "field":"URL",
+             "priority":3,
+             "visibility":1
+          },
+          "Name":{
+             "text":"${meta['Resource_Name']}",
+             "type":"title",
+             "priority":1,
+             "visibility":1
+          },
+          "Image":{
+             "alt":"${meta['Resource_Name']}",
+             "src":"${meta['icon']}",
+             "type":"img",
+             "priority":1,
+             "visibility":1
+          },
+          "Tooltip":{
+             "text":"${meta['description']}",
+             "type":"tooltip"
+          },
+          "Description":{
+             "text":"${meta['description']}",
+             "type":"subtitle",
+             "priority":2,
+             "visibility":1
+          },
+          "Signature Count":{
+             "text":"${meta['Signature_Count']}",
+             "type":"text",
+             "field":"meta.Signature_Count",
+             "priority":3,
+             "visibility":1
+          },
+          "Signature_Count":{
+             "text":"${scores.signature_count}",
+             "type":"score",
+             "field":"scores.signature_count",
+             "priority":1,
+             "visibility":1
+          }
+       }
     }
-}
+ }
