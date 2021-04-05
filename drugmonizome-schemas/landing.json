@@ -136,7 +136,7 @@
 					"iframe": {
 						"api-tutorial": {
 							"id": "api-tutorial",
-							"src": "https://nbviewer.jupyter.org/github/MaayanLab/Drugmonizome/blob/master/api-tutorial.ipynb",
+							"src": "https://sigcom-tutorials.s3.amazonaws.com/web/api-tutorial.html",
 							"name": "API Tutorial",
 							"height": 11000,
 							"frameBorder": 0
@@ -150,7 +150,7 @@
 						},
 						"Drugmonizome_ML-tutorial": {
 							"id": "Drugmonizome_ML-tutorial",
-							"src": "https://maayanlab.cloud/drugmonizome/static/tutorial/drugmonizome/Drugmonizome_ML-tutorial.html",
+							"src": "https://sigcom-tutorials.s3.amazonaws.com/web/Drugmonizome_ML-tutorial.html",
 							"name": "Drugmonizome-ML Tutorial",
 							"height": 5500,
 							"frameBorder": 0
