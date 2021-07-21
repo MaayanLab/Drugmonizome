@@ -30,6 +30,11 @@
           "items": {
             "type": "string"
           }
+        },
+        "Download_url": {
+          "description": "Link to unique single drug page file in s3",
+          "format": "uri",
+          "type": "string"
         }
       },
       "required": [
