@@ -31,6 +31,10 @@
             "type": "string"
           }
         },
+        "PubChemID": {
+          "type":"integer",
+          "description": "PubChem identifier for this specific entity"
+        },
         "Download_url": {
           "description": "Link to unique single drug page file in s3",
           "format": "uri",
